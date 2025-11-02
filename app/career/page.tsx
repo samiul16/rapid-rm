@@ -6,8 +6,10 @@ import Image from "next/image";
 import Header from "./Header";
 import { motion, Variants } from "framer-motion";
 import DownloadOurApp from "@/components/DownloadOurApp";
+import { useRouter } from "next/navigation";
 
 const CareerPage = () => {
+  const router = useRouter();
   const jobs = [
     {
       id: 1,
@@ -322,6 +324,9 @@ const CareerPage = () => {
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      router.push(`/jobs/${job.id}`);
+                    }}
                   >
                     <span className="text-base sm:text-lg font-semibold whitespace-nowrap">
                       Apply Now
