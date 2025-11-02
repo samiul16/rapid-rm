@@ -18,47 +18,47 @@ const OurServices = () => {
     {
       title: "Civil Engineering",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "We provide highly skilled professionals and technical teams for all types of civil projects. From site engineers and supervisors to welders, fabricators, painters, and riggers — we ensure your construction goals are achieved with precision and safety.",
     },
     {
       title: "Mechanical Engineering",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "Our mechanical workforce includes certified welders, fabricators, fitters, and riggers who bring hands-on expertise to every industrial project. We also conduct welder tests and interviews to ensure only top-quality talent joins your team.",
     },
     {
       title: "Electrical Engineering",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "We supply qualified electricians, technicians, and maintenance professionals for commercial, industrial, and infrastructure projects. Every candidate is thoroughly tested and trained for safe and efficient electrical operations.",
     },
     {
       title: "Constructions",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "From general labor to specialized tradesmen, our construction staffing solutions cover every need — including fabricators, riggers, painters, and welders. We focus on delivering reliable manpower that keeps your projects on schedule.",
     },
     {
       title: "Oil & Gas",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "Our oil and gas division offers experienced field technicians, welders, fabricators, and safety officers who meet the strictest industry standards. We conduct practical tests and technical assessments to ensure top performance in every operation.",
     },
     {
       title: "Transportation",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "We supply skilled drivers, logistics handlers, and heavy vehicle operators for smooth and safe transportation management. Our manpower is trained to handle all kinds of transport and logistics operations efficiently.",
     },
     {
       title: "Manufacturing",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "RM Orient provides trained factory workers, machine operators, welders, and assembly line specialists who maintain productivity and quality across your manufacturing processes. We ensure each candidate is evaluated for skill and discipline.",
     },
     {
       title: "Hospitality",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "From housekeeping and kitchen staff to receptionists and service crews, we deliver professional manpower that reflects your brand’s excellence. Our team ensures every recruit upholds the highest standards of hospitality and guest service.",
     },
     {
       title: "Executive Selection",
       description:
-        "Open for welder tests and interviews for fabricators, painters, and riggers. Open for welder tests and interviews for fabricators, painters, and riggers. fabricators, painters, and riggers.",
+        "We help companies find exceptional leaders — from mid-level managers to top executives. Our recruitment process ensures the right blend of experience, skill, and leadership to drive your organization’s long-term success.",
     },
   ];
 

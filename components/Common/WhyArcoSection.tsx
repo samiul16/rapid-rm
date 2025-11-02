@@ -11,17 +11,15 @@ const WhyArcoSection = () => {
               Why RM?
             </h2>
             <div className="w-full mx-auto">
-              <p className="text-base md:text-lg text-cyan-900 leading-relaxed font-['Anek_Malayalam'] text-start">
-                The UAE&apos;s most trusted staffing and manpower solutions
-                partner, combining excellence and cost competency with fast
-                delivery capabilities. Smooth provide tailored staffing and
-                manpower solutions to leading brands and prominent businesses
-                with specialisation in multiple segments. Our tailored solutions
-                manage global and local recruitment, onboarding, deployment,
-                housing and transportation throughout the employee life cycle.
-                From site based through to office based staff, to C-level
-                recruitment, we provide solutions for all our clients&apos;
-                needs.
+              <p className="text-base md:text-lg text-cyan-900 leading-relaxed font-['Anek_Malayalam'] text-center">
+                Because we make manpower simple, strategic, and stress-free.
+                From urgent on-site labor to top-level executives, RM Orient
+                provides tailored staffing, HR, and compliance solutions that
+                align perfectly with your business needs. Our expertise in PRO,
+                PEO, and EoR services ensures that you stay legally compliant
+                while we handle the complexities of workforce management. <br />{" "}
+                At RM Orient, we don’t just fill positions — we build
+                partnerships that drive success.
               </p>
             </div>
           </div>

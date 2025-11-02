@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { ChevronDown, Download, Award } from "lucide-react";
+import { ChevronDown, Award } from "lucide-react";
 
 const WhoWeAre = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -13,19 +13,19 @@ const WhoWeAre = () => {
       id: "mission",
       title: "Our Mission",
       content:
-        "To deliver exceptional dining experiences through quality food, warm hospitality, and authentic flavors that bring people together and create lasting memories.",
+        "To deliver comprehensive manpower and HR solutions that empower businesses to achieve operational excellence through efficiency, compliance, and trusted partnerships",
     },
     {
       id: "vision",
       title: "Our Vision",
       content:
-        "To become a recognized name in the culinary world, expanding our reach while maintaining our commitment to quality, authenticity, and customer satisfaction.",
+        "To be the leading workforce and HR service provider in the region — recognized for reliability, innovation, and excellence in connecting people, processes, and performance.",
     },
     {
       id: "values",
       title: "Our Values",
       content:
-        "Quality, authenticity, hospitality, innovation, and community. We believe in serving food that not only tastes great but also brings people together.",
+        "At RM Orient, our values define who we are and how we serve:\n\nIntegrity: We uphold honesty and transparency in every partnership.\n\nReliability: Always ready to deliver, no matter how urgent or complex the task.\n\nExcellence: We strive for quality and perfection in every service we provide.\n\nCustomer Focus: Your goals are our priority — we grow by helping you grow.\n\nInnovation: We continuously improve to meet the evolving needs of modern business.",
     },
   ];
 
@@ -84,17 +84,19 @@ const WhoWeAre = () => {
                 About RM
               </h2>
               <p className="text-base text-zinc-600 leading-relaxed text-justify">
-                Excellency was born from a passion for authentic flavor, warm
-                hospitality, and an unwavering commitment to quality.
-                Established in 2014, we started as a small dining spot with a
-                big dream — to bring people together over food that feels like
-                home. Our founders, inspired by culinary traditions from around
-                the world, laid the foundation for a restaurant that values
-                heart, heritage, and honest taste. Over the years, our name has
-                become a symbol of consistency, taste, and trust. What began
-                with a few tables and a handful of signature dishes has now
-                grown into a destination for food lovers seeking a memorable
-                experience.
+                Founded with a vision to empower businesses through reliable
+                workforce solutions, RM Orient has become a trusted name in
+                manpower and staffing excellence. We specialize in connecting
+                companies with the right talent — from on-demand labor to
+                executive professionals — ensuring every project runs smoothly,
+                efficiently, and successfully. <br />
+                Our team is dedicated to providing end-to-end HR, recruitment,
+                and compliance solutions that help clients save time, reduce
+                risk, and focus on what truly matters — growing their business.{" "}
+                <br />
+                With integrity, precision, and professionalism at the heart of
+                everything we do, RM Orient stands as a symbol of trust,
+                commitment, and quality in workforce management.
               </p>
             </motion.div>
 
@@ -103,7 +105,7 @@ const WhoWeAre = () => {
               className="flex flex-col gap-6"
               variants={containerVariants}
             >
-              {sections.map((section, index) => (
+              {sections.map((section) => (
                 <motion.div
                   key={section.id}
                   className="flex flex-col overflow-hidden"
@@ -138,10 +140,81 @@ const WhoWeAre = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="pt-4 px-2">
-                      <p className="text-base text-zinc-600 leading-relaxed">
-                        {section.content}
-                      </p>
+                    <div className="pt-6 px-4 pl-5">
+                      {section.id === "values" ? (
+                        <div className="space-y-3">
+                          <p className="text-base text-zinc-700 leading-relaxed mb-4">
+                            At RM Orient, our values define who we are and how
+                            we serve:
+                          </p>
+                          <ul className="space-y-3 text-zinc-600">
+                            <li className="flex items-start gap-3">
+                              <span className="text-sky-500 font-bold mt-1">
+                                •
+                              </span>
+                              <span>
+                                <strong className="text-cyan-800">
+                                  Integrity:
+                                </strong>{" "}
+                                We uphold honesty and transparency in every
+                                partnership.
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-sky-500 font-bold mt-1">
+                                •
+                              </span>
+                              <span>
+                                <strong className="text-cyan-800">
+                                  Reliability:
+                                </strong>{" "}
+                                Always ready to deliver, no matter how urgent or
+                                complex the task.
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-sky-500 font-bold mt-1">
+                                •
+                              </span>
+                              <span>
+                                <strong className="text-cyan-800">
+                                  Excellence:
+                                </strong>{" "}
+                                We strive for quality and perfection in every
+                                service we provide.
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-sky-500 font-bold mt-1">
+                                •
+                              </span>
+                              <span>
+                                <strong className="text-cyan-800">
+                                  Customer Focus:
+                                </strong>{" "}
+                                Your goals are our priority — we grow by helping
+                                you grow.
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-sky-500 font-bold mt-1">
+                                •
+                              </span>
+                              <span>
+                                <strong className="text-cyan-800">
+                                  Innovation:
+                                </strong>{" "}
+                                We continuously improve to meet the evolving
+                                needs of modern business.
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      ) : (
+                        <p className="text-base text-zinc-600 leading-relaxed whitespace-pre-line">
+                          {section.content}
+                        </p>
+                      )}
                     </div>
                   </motion.div>
                 </motion.div>

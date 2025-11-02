@@ -44,7 +44,7 @@ const OurMedia = () => {
     {
       id: 4,
       type: "video",
-      src: "/media/media-4.mp4",
+      src: "https://www.youtube.com/embed/mbwuj58UEPg?start=23&autoplay=1",
       thumbnail: "/media/media-4.jpg",
       alt: "Company Video",
       size: "large",
@@ -281,7 +281,7 @@ const OurMedia = () => {
                 >
                   {/* Close Button - Positioned relative to content */}
                   <motion.button
-                    className="absolute -top-5 right-[320px] z-10 w-12 h-12 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center transition-colors shadow-2xl cursor-pointer"
+                    className="absolute -top-2 right-[3px] z-10 w-12 h-12 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center transition-colors shadow-2xl cursor-pointer"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.5 }}
@@ -306,14 +306,16 @@ const OurMedia = () => {
                       />
                     </div>
                   ) : (
-                    <video
-                      src={selectedMedia.src}
-                      controls
-                      autoPlay={isPlaying}
-                      className="w-full max-h-[85vh] rounded-lg"
-                    >
-                      Your browser does not support the video tag.
-                    </video>
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <iframe
+                        src={selectedMedia.src}
+                        className="w-full h-[80vh] min-h-[600px] max-w-[95vw] rounded-lg"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title={selectedMedia.alt}
+                      />
+                    </div>
                   )}
                 </motion.div>
               </motion.div>

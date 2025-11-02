@@ -118,15 +118,18 @@ const ServicesSection = () => {
                   On-Demand Labour
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
-                  Rapid, reliable manpower for construction, logistics, and
-                  maintenance projects of any scale.
+                  We provide skilled and unskilled workforce on short notice to
+                  meet your urgent project requirements. Reliable, flexible, and
+                  ready when you need them most.
                 </p>
-                <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                    Explore More
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
+                <Link href="/services" className="w-full">
+                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
+                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                      Explore More
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </button>
+                </Link>
               </div>
             </motion.div>
 
@@ -154,15 +157,18 @@ const ServicesSection = () => {
                   Executive Staffing
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
-                  Proven leaders and professionals matched to drive results and
-                  long-term growth.
+                  Connecting you with qualified professionals for key leadership
+                  and management roles — ensuring expertise, efficiency, and
+                  long-term business growth.
                 </p>
-                <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                    Explore More
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
+                <Link href="/services" className="w-full">
+                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
+                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                      Explore More
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </button>
+                </Link>
               </div>
             </motion.div>
 
@@ -190,15 +196,18 @@ const ServicesSection = () => {
                   PRO Services
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
-                  Proven leaders and professionals matched to drive results and
-                  long-term growth.
+                  We handle all government documentation, visa, and employee
+                  processing services to save your time and ensure compliance
+                  with legal standards.
                 </p>
-                <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                    Explore More
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
+                <Link href="/services" className="w-full">
+                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
+                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                      Explore More
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </button>
+                </Link>
               </div>
             </motion.div>
 
@@ -226,15 +235,17 @@ const ServicesSection = () => {
                   PEO Services
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
-                  Complete HR, payroll, and compliance management so you can
-                  focus on growth.
+                  Our PEO services help businesses manage HR, payroll, and
+                  compliance seamlessly while they focus on core operations.
                 </p>
-                <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                    Explore More
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
+                <Link href="/services" className="w-full">
+                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
+                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                      Explore More
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </button>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -265,15 +276,18 @@ const ServicesSection = () => {
                   EoR Services
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
-                  Hire and manage staff in the UAE quickly and legally without
-                  setting up a local entity.
+                  We act as your legal employer, managing employment contracts,
+                  benefits, and compliance — making overseas hiring smooth and
+                  risk-free.
                 </p>
-                <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                    Explore More
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
+                <Link href="/services" className="w-full">
+                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
+                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                      Explore More
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </button>
+                </Link>
               </div>
             </motion.div>
 
@@ -301,15 +315,18 @@ const ServicesSection = () => {
                   Recruitment Process
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
-                  End-to-end hiring support that speeds placements and elevates
-                  talent quality.
+                  Let us handle your entire recruitment process — from talent
+                  sourcing to onboarding — ensuring you get the best candidates
+                  faster and more efficiently.
                 </p>
-                <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                    Explore More
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
+                <Link href="/services" className="w-full">
+                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
+                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                      Explore More
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </button>
+                </Link>
               </div>
             </motion.div>
 

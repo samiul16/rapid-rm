@@ -367,7 +367,7 @@ const ProjectsShowcase = () => {
         </motion.div>
 
         {/* See More Button */}
-        <motion.div
+        {/* <motion.div
           className="flex justify-center"
           initial="hidden"
           whileInView="visible"
@@ -400,7 +400,7 @@ const ProjectsShowcase = () => {
               />
             </motion.svg>
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
