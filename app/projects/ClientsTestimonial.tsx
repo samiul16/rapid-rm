@@ -35,7 +35,7 @@ const ClientTestimonials = () => {
       image: "/clients/client1.jpg",
       rating: 5,
       testimonial:
-        "RM Engineering provided exceptional staffing solutions for our metro project. Their team was professional, skilled, and delivered beyond our expectations. Highly recommended!",
+        "RM Orient provided exceptional staffing solutions for our metro project. Their team was professional, skilled, and delivered beyond our expectations. Highly recommended!",
     },
     {
       id: 2,

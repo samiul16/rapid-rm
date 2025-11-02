@@ -36,7 +36,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         {/* Content */}
         <div className="absolute inset-0 z-20 p-6 flex flex-col justify-center">
           <div className="flex justify-between items-start mb-4">
-            <h3 className="text-xl mt-4 font-medium text-[#E9F5FB]">
+            <h3 className="text-xl mt-14 font-medium text-[#E9F5FB]">
               {testimonial.title}
             </h3>
             <Image
@@ -90,50 +90,50 @@ const ClientTestimonials = () => {
     {
       id: 1,
       name: "Stephanie Hutchkiss",
-      title: "Excellent Service! Car Rent Service",
+      title:
+        "RM Orient has been a reliable partner for our manpower needs. Their quick response, professionalism, and quality of workers have truly impressed us.",
       image: "/client/1.jpg",
-      testimonial:
-        "I have been using Rentaly for my Car Rental needs for over 5 years now. I have never had any problems with their service. Their customer support is always responsive and helpful. I would recommend Rentaly to anyone looking for a reliable Car Rental provider",
+      testimonial: "",
     },
     {
       id: 2,
       name: "Michael Johnson",
-      title: "Outstanding Experience! Premium Service",
+      title:
+        "We appreciate their dedication and attention to detail. Every project is handled with care, and deadlines are always met without compromise.",
       image: "/client/2.jpg",
-      testimonial:
-        "Amazing experience with this car rental service! The vehicles are always clean, well-maintained, and the booking process is seamless. The staff is professional and goes above and beyond to ensure customer satisfaction.",
+      testimonial: "",
     },
     {
       id: 3,
       name: "Sarah Williams",
-      title: "Reliable & Professional Service",
+      title:
+        "The team at RM Orient consistently provides skilled manpower and excellent support throughout the process. Truly a trusted partner.",
       image: "/client/3.jpg",
-      testimonial:
-        "I've used many car rental services, but this one stands out for its reliability and professionalism. The cars are luxury vehicles in perfect condition, and the pricing is very competitive. Highly recommended!",
+      testimonial: "",
     },
     {
       id: 4,
       name: "David Brown",
-      title: "Top Quality Fleet & Service",
+      title:
+        "Their recruitment process is smooth, transparent, and efficient. We received exactly the kind of professionals we needed — highly recommended.",
       image: "/client/1.jpg",
-      testimonial:
-        "Exceptional service quality and an impressive fleet of vehicles. The booking process is straightforward, and the customer service team is always available to help. Will definitely use their services again.",
+      testimonial: "",
     },
     {
       id: 5,
       name: "Emma Davis",
-      title: "Perfect for Business Travel",
+      title:
+        "Excellent service and strong customer support. They understand our business requirements perfectly and deliver manpower that fits every role.",
       image: "/client/2.jpg",
-      testimonial:
-        "As a frequent business traveler, I need reliable transportation. This service has never let me down. Professional drivers, clean vehicles, and always on time. Perfect for corporate needs.",
+      testimonial: "",
     },
     {
       id: 6,
       name: "James Wilson",
-      title: "Luxury Cars, Great Prices",
+      title:
+        "Working with RM Orient has been a great experience. Their commitment to quality and reliability makes them stand out in the industry.",
       image: "/client/3.jpg",
-      testimonial:
-        "Great selection of luxury vehicles at competitive prices. The staff is knowledgeable and helpful in choosing the right car for your needs. The entire experience from booking to return is smooth and professional.",
+      testimonial: "",
     },
   ];
 

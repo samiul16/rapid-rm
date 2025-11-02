@@ -83,8 +83,8 @@ const Section = () => {
                         engagement through to
                       </p>
                       <p>
-                        deployment, RM Engineering and Staffing Solutions
-                        experienced team will identify the key milestones and
+                        deployment, RM Orient and Staffing Solutions experienced
+                        team will identify the key milestones and
                       </p>
                       <p>
                         agree schedules of delivery to ensure your staff are

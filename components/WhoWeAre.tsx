@@ -165,7 +165,7 @@ const WhoWeAre = () => {
               </motion.div>
 
               {/* Download Profile Button */}
-              <motion.button
+              {/* <motion.button
                 className="px-8 py-4 bg-sky-500 rounded-[30px] flex items-center justify-center gap-4 hover:bg-sky-600 transition-colors w-full sm:w-auto cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -174,7 +174,7 @@ const WhoWeAre = () => {
                   Download Profile
                 </span>
                 <Download className="w-6 h-6 text-white" />
-              </motion.button>
+              </motion.button> */}
             </motion.div>
           </motion.div>
 

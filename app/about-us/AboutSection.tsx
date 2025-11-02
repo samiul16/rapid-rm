@@ -21,11 +21,11 @@ const AboutSection = () => {
             <div className="mt-2">
               <div className="text-[#171717] text-lg font-['Anek_Malayalam'] space-y-4">
                 <p>
-                  RM Engineering and staffing solutions is a leading HR
-                  company in UAE providing the best manpower solutions across
-                  blue collar, white collar and grey collar, with 18 years of
-                  experience as a trusted manpower solution company in the UAE,
-                  we are your go-to partner for all your staffing needs.
+                  RM Orient and staffing solutions is a leading HR company in
+                  UAE providing the best manpower solutions across blue collar,
+                  white collar and grey collar, with 18 years of experience as a
+                  trusted manpower solution company in the UAE, we are your
+                  go-to partner for all your staffing needs.
                 </p>
                 <p>
                   Our extensive track record includes successfully completing

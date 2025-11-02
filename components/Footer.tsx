@@ -44,9 +44,9 @@ export default function Footer() {
             </div>
 
             <p className="text-white text-lg leading-relaxed -mt-10">
-              RM Engineering Company Ltd. is a Saudi Arabia based Manpower
-              Supply Company established in the year 2014 to provide quality
-              personnel to all fields of expertise and read more..
+              RM Orient Company Ltd. is a Saudi Arabia based Manpower Supply
+              Company established in the year 2014 to provide quality personnel
+              to all fields of expertise and read more..
             </p>
 
             {/* Social Media Icons */}
@@ -270,28 +270,27 @@ export default function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
                 <div className="text-white text-md leading-relaxed">
-                  <p>Abdul wahed Al Malqa</p>
-                  <p>Batha Quraish Dist Makkah</p>
-                  <p>Kingdom of Saudi Arabia</p>
-                  <p>P.O. Box: 24353</p>
+                  <p>Room No:801,Level -7, 30/A,</p>
+                  <p>Nayapaltan (V.I.P Road),</p>
+                  <p>Dhaka, Bangladesh</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-white flex-shrink-0" />
                 <Link
-                  href="tel:+966505176100"
+                  href="tel:+8801715690755"
                   className="text-white text-lg hover:text-sky-300 transition-colors"
                 >
-                  +966 50 517 6100
+                  +88 01715-690755
                 </Link>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-white flex-shrink-0" />
                 <Link
-                  href="mailto:info@rmeng.com"
+                  href="mailto:rmorientoverseas@gmail.com"
                   className="text-white text-lg hover:text-sky-300 transition-colors"
                 >
-                  info@rmeng.com
+                  rmorientoverseas@gmail.com
                 </Link>
               </div>
             </div>

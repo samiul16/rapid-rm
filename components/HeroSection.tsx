@@ -129,22 +129,22 @@ const HeroSection = () => {
             backgroundPosition: "center",
             filter:
               index === currentSlide
-                ? "brightness(0.8) contrast(1.05)"
-                : "brightness(0.8) blur(2px)",
+                ? "brightness(0.7) contrast(1.05)"
+                : "brightness(0.7) blur(2px)",
             transition:
               "all 800ms cubic-bezier(0.4, 0, 0.2, 1), filter 600ms ease-out",
           }}
         >
-          {/* Sky Gradient Overlay */}
+          {/* Darker Overlay for Better Text Contrast */}
           <div
             className={`absolute inset-0 transition-all duration-700 ${
-              index === currentSlide ? "opacity-30" : "opacity-50"
+              index === currentSlide ? "opacity-40" : "opacity-60"
             }`}
             style={{
               background:
                 index === currentSlide
-                  ? "linear-gradient(45deg, rgba(135, 206, 235, 0.2) 0%, rgba(30, 144, 255, 0.7) 100%)"
-                  : "linear-gradient(45deg, rgba(135, 206, 235, 0.4) 0%, rgba(30, 144, 255, 0.5) 100%)",
+                  ? "linear-gradient(45deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%)"
+                  : "linear-gradient(45deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%)",
             }}
           ></div>
 
@@ -185,23 +185,27 @@ const HeroSection = () => {
           data-aos-delay="200"
         >
           <h1
-            className={`text-white/90 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center leading-tight tracking-[-0.4px] transition-all duration-700 transform font-anek ${
+            className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center leading-tight tracking-[-0.4px] transition-all duration-700 transform font-anek ${
               isTransitioning
-                ? "opacity-70 translate-y-2 scale-98"
+                ? "opacity-90 translate-y-2 scale-98"
                 : "opacity-100 translate-y-0 scale-100"
             }`}
             style={{
-              textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+              textShadow:
+                "3px 3px 6px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)",
               animation: isTransitioning ? "none" : "fadeInUp 1s ease-out",
+              filter: "brightness(1.15) contrast(1.1)",
             }}
           >
             Excellence Manpower Solutions
           </h1>
 
           <p
-            className="text-white/80 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-anek"
+            className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-anek font-medium"
             style={{
-              textShadow: "1px 1px 3px rgba(0,0,0,0.5)",
+              textShadow:
+                "2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.4)",
+              filter: "brightness(1.2) contrast(1.1)",
             }}
           >
             Empowering Your Business with the Right People

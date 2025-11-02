@@ -97,9 +97,13 @@ const DownloadOurApp = () => {
               </div>
 
               {/* Download Buttons */}
+              {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 lg:gap-6 w-full lg:w-auto">
                 {/* App Store Button */}
-                <motion.button
+                <motion.a
+                  href="https://apps.apple.com/app/" // Replace with your actual App Store URL
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-full sm:w-auto px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-[50px] shadow-[0px_6px_8px_0px_rgba(0,0,0,0.20)] outline outline-1 outline-offset-[-1px] outline-white/20 flex items-center justify-center gap-3 transition-colors cursor-pointer"
@@ -119,10 +123,13 @@ const DownloadOurApp = () => {
                       App Store
                     </span>
                   </div>
-                </motion.button>
+                </motion.a>
 
                 {/* Google Play Button */}
-                <motion.button
+                <motion.a
+                  href="https://play.google.com/store/apps/" // Replace with your actual Play Store URL
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-full sm:w-auto px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-[50px] shadow-[0px_6px_8px_0px_rgba(0,0,0,0.20)] outline outline-1 outline-offset-[-1px] outline-white/20 flex items-center justify-center gap-3 transition-colors cursor-pointer"
@@ -130,7 +137,7 @@ const DownloadOurApp = () => {
                   <Image
                     src="/play-store.svg"
                     className="w-8 h-8 text-rose-100"
-                    alt="App Store"
+                    alt="Google Play"
                     width={32}
                     height={32}
                   />
@@ -142,7 +149,7 @@ const DownloadOurApp = () => {
                       Google Play
                     </span>
                   </div>
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
           </div>

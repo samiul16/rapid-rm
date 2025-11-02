@@ -46,7 +46,7 @@ export default function MapSection() {
           shadowSize: [41, 41],
         });
 
-        const position: [number, number] = [25.3463, 55.4209];
+        const position: [number, number] = [23.7343837, 90.403737];
 
         // Map control component to handle centering
         const MapController = ({
@@ -102,19 +102,19 @@ export default function MapSection() {
                 <Marker position={position} icon={redIcon}>
                   <Popup className="custom-popup">
                     <div className="p-2">
-                      <h3 className="font-bold text-lg mb-2">ADMS Office</h3>
+                      <h3 className="font-bold text-lg mb-2">RM Office</h3>
                       <p className="text-sm text-gray-600 mb-2">
-                        Al Majaz Jamal Abdul Nasser Street
+                        Room No:801,Level -7, 30/A,
                         <br />
-                        Ground Floor (G-1)
+                        Nayapaltan (V.I.P Road),
                         <br />
-                        Sharjah, UAE
+                        Dhaka, Bangladesh
                       </p>
                       <div className="text-sm">
+                        <p className="font-semibold">Phone: +88 01715-690755</p>
                         <p className="font-semibold">
-                          Phone: +971 (02) 633 0660
+                          Email: rmorientoverseas@gmail.com
                         </p>
-                        <p className="font-semibold">Email: info@admsuae.com</p>
                       </div>
                     </div>
                   </Popup>
@@ -124,9 +124,7 @@ export default function MapSection() {
               {/* Info Card Overlay - Top Left */}
               <div className="absolute top-2 left-2 z-10 bg-white rounded-lg shadow-lg border border-gray-200 p-4 max-w-xs">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-lg font-bold text-gray-900">
-                    1 Building
-                  </h3>
+                  <h3 className="text-lg font-bold text-gray-900">RM Office</h3>
 
                   {/* direction for moving map */}
                   <button
@@ -157,9 +155,9 @@ export default function MapSection() {
                 </div>
 
                 <div className="text-sm text-gray-600 mb-3 leading-relaxed">
-                  <p>1 Building · 2 Jamal Abdul Naser St ·</p>
-                  <p>Al Majaz 2 · Al Majaz · Sharjah ·</p>
-                  <p>United Arab Emirates</p>
+                  <p>Room No:801,Level -7, 30/A,</p>
+                  <p>Nayapaltan (V.I.P Road),</p>
+                  <p>Dhaka, Bangladesh</p>
                 </div>
 
                 <button

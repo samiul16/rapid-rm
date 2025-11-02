@@ -79,10 +79,10 @@ export default function OfficeContactSection() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0" />
                 <a
-                  href="mailto:info@smoothmanpower.com"
+                  href="mailto:info@rmeng.com"
                   className="text-gray-200 hover:text-white transition-colors break-all"
                 >
-                  info@smoothmanpower.com
+                  info@rmeng.com
                 </a>
               </div>
             </div>

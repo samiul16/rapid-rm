@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
-import { div, section } from "framer-motion/client";
+import toast from "react-hot-toast";
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
@@ -29,20 +29,59 @@ export default function ContactFormSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      alert("Form submitted successfully!");
-      setIsSubmitting(false);
-      // Reset form
-      setFormData({
-        fullName: "",
-        phone: "",
-        email: "",
-        description: "",
-        message: "",
+    // Show loading toast
+    const loadingToast = toast.loading("Sending your message...");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 1000);
+
+      const data = await response.json();
+
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
+      if (response.ok) {
+        // Show success toast
+        toast.success(
+          "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+          {
+            duration: 5000,
+          }
+        );
+
+        // Reset form
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          description: "",
+          message: "",
+        });
+      } else {
+        // Show error toast
+        toast.error(data.error || "Failed to send message. Please try again.", {
+          duration: 4000,
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
+      // Show error toast
+      toast.error("An error occurred. Please try again later.", {
+        duration: 4000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -142,7 +181,8 @@ export default function ContactFormSection() {
                     onChange={handleChange}
                     placeholder="Name"
                     required
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
 
@@ -155,7 +195,8 @@ export default function ContactFormSection() {
                     onChange={handleChange}
                     placeholder="Phone"
                     required
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
 
@@ -168,7 +209,8 @@ export default function ContactFormSection() {
                     onChange={handleChange}
                     placeholder="Email"
                     required
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
 
@@ -180,8 +222,8 @@ export default function ContactFormSection() {
                     value={formData.description}
                     onChange={handleChange}
                     placeholder="Description"
-                    required
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
 
@@ -193,7 +235,8 @@ export default function ContactFormSection() {
                     onChange={handleChange}
                     placeholder="Message"
                     required
-                    className="w-full h-full min-h-[112px] p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors resize-none"
+                    disabled={isSubmitting}
+                    className="w-full h-full min-h-[112px] p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
               </div>
@@ -202,14 +245,14 @@ export default function ContactFormSection() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
                 className="px-8 py-4 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-[30px] text-white text-xl font-bold font-['Anek_Malayalam'] uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed mt-6"
               >
                 {isSubmitting ? (
                   <>
                     <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    SUBMITTING...
+                    SENDING...
                   </>
                 ) : (
                   <>

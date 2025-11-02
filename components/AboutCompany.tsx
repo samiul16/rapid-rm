@@ -80,28 +80,24 @@ export default function ManpowerSection() {
               data-aos-delay="300"
             >
               <p className="transition-all duration-300 hover:text-slate-900 text-base">
-                RM Engineering was established in 2005 and has maintained an
-                excellent track record in the field of contracting and manpower
-                services in several different sectors ranging from blue collar
-                to white collar workers. We have a wide, diverse and dedicated
-                workforce that hail from different parts of the world – Sri
-                Lanka, India, Pakistan, Ghana and Nigeria
+                RM Orient, established in 2005, is a trusted name in contracting
+                and manpower solutions across multiple industries. From
+                blue-collar to white-collar professionals, we provide skilled
+                and reliable workforce tailored to your business needs.
               </p>
 
               <p className="transition-all duration-300 hover:text-slate-900 text-base">
-                In the 17 years that our company has been active, we have been
-                dedicated to providing the best manpower solutions through our
-                tireless commitment to our clients and and willingness to keep
-                striving to do better. Our reputation preceds us and is built on
-                sheer quality, strict adherence to time schedules and deadlines.
+                Our diverse team, drawn from Sri Lanka, India, Pakistan, Ghana,
+                and Nigeria, brings global expertise and dedication to every
+                project. For over 17 years, we have been committed to delivering
+                excellence, meeting deadlines, and ensuring unmatched quality in
+                every service we provide.
               </p>
 
               <p className="transition-all duration-300 hover:text-slate-900 text-base">
-                We have been dedicated to providing the best manpower solutions
-                through our tireless commitment to our clients and and
-                willingness to keep striving to do better. Our reputation
-                precedes us and is built on sheer quality, strict adherence to
-                time schedules and deadlines.
+                At RM Orient, our reputation speaks for itself — built on
+                integrity, professionalism, and an unwavering commitment to help
+                our clients succeed.
               </p>
             </div>
 
