@@ -88,8 +88,8 @@ export default function ContactFormSection() {
     {
       icon: Phone,
       title: "Phone",
-      content: "+966 50 517 6100",
-      link: "tel:+966505176100",
+      content: "+88 01715-690755",
+      link: "tel:+8801715690755",
     },
     {
       icon: Mail,

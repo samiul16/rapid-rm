@@ -59,20 +59,20 @@ export default function OfficeContactSection() {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 flex-shrink-0" />
                 <a
-                  href="tel:+97102551475"
+                  href="tel:+8801715690755"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
-                  +971 02 551 4475
+                  +88 01715-690755
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 flex-shrink-0" />
                 <a
-                  href="tel:+97154996341"
+                  href="tel:+8801715690755"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
-                  +971 54 996 4341
+                  +88 01715-690755
                 </a>
               </div>
 

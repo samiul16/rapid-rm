@@ -280,7 +280,7 @@ const Engineering = () => {
                   <input
                     type="tel"
                     name="phoneNumber"
-                    placeholder="+971XXXXXXXXX"
+                    placeholder="Phone Number"
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
                     disabled={isSubmitting}
