@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import ExpandableSearchBar from "./Common/ExpandableSearchBar";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -216,6 +217,26 @@ const Navbar = () => {
 
           {/* Right Side Controls */}
           <div className="hidden md:flex items-center space-x-6">
+            {/* Search Bar */}
+            <ExpandableSearchBar
+              onSearch={(query) => {
+                // Handle search functionality here
+                console.log("Search query:", query);
+                // You can implement navigation to search results page or filter content
+              }}
+              placeholder="Search services, projects..."
+              suggestions={[
+                "Construction Services",
+                "Engineering Solutions",
+                "Project Management",
+                "Industrial Services",
+                "Oil & Gas Projects",
+                "Infrastructure Development",
+              ]}
+              iconColor={styles.textColor}
+              hoverIconColor="group-hover:text-sky-500"
+            />
+
             {/* Language Selector with Flag */}
             {/* <div className="relative" ref={langRef}>
               <button
@@ -435,6 +456,30 @@ const Navbar = () => {
             >
               Contact
             </Link>
+          </div>
+
+          {/* Mobile Search Bar */}
+          <div className="mt-8 mb-6">
+            <ExpandableSearchBar
+              onSearch={(query) => {
+                // Handle search functionality here
+                console.log("Mobile search query:", query);
+                setIsMobileMenuOpen(false); // Close mobile menu after search
+                // You can implement navigation to search results page or filter content
+              }}
+              placeholder="Search services, projects..."
+              suggestions={[
+                "Construction Services",
+                "Engineering Solutions",
+                "Project Management",
+                "Industrial Services",
+                "Oil & Gas Projects",
+                "Infrastructure Development",
+              ]}
+              iconColor="text-white/80"
+              hoverIconColor="hover:text-sky-500"
+              className="w-full"
+            />
           </div>
 
           {/* Mobile Language Selector */}
