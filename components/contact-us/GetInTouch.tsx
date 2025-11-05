@@ -102,8 +102,8 @@ export default function ContactFormSection() {
     {
       icon: Mail,
       title: "Email",
-      content: "info@rmeng.com",
-      link: "mailto:info@rmeng.com",
+      content: "rmorientoverseas@gmail.com",
+      link: "mailto:rmorientoverseas@gmail.com",
     },
     {
       icon: MapPin,

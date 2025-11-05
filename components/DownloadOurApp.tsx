@@ -15,7 +15,7 @@ const DownloadOurApp = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-gradient-to-br from-sky-100/25 to-sky-600 rounded-[40px] overflow-visible shadow"
+          className="relative bg-gradient-to-br from-sky-300/25 to-sky-600 rounded-[40px] overflow-visible shadow"
         >
           {/* Background Pattern/Decoration */}
           <div className="absolute inset-0 opacity-10 overflow-hidden rounded-[40px]">
@@ -106,7 +106,7 @@ const DownloadOurApp = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-[50px] shadow-[0px_6px_8px_0px_rgba(0,0,0,0.20)] outline outline-1 outline-offset-[-1px] outline-white/20 flex items-center justify-center gap-3 transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-[50px] shadow-lg outline outline-1 outline-offset-[-1px] outline-white/20 flex items-center justify-center gap-3 transition-colors cursor-pointer"
                 >
                   <Image
                     src="/apple.svg"
@@ -132,7 +132,7 @@ const DownloadOurApp = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-[50px] shadow-[0px_6px_8px_0px_rgba(0,0,0,0.20)] outline outline-1 outline-offset-[-1px] outline-white/20 flex items-center justify-center gap-3 transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-[50px] shadow-lg outline outline-1 outline-offset-[-1px] outline-white/20 flex items-center justify-center gap-3 transition-colors cursor-pointer"
                 >
                   <Image
                     src="/play-store.svg"

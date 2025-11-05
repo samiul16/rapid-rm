@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 items-center">
           {/* Company Info Section */}
           <div className="lg:col-span-1 flex flex-col space-y-4 h-full">
-            <div className="flex items-center mb-16 sm:pl-16">
+            <div className="flex items-center mb-16 sm:pl-8">
               <Image
                 src="/rm-logo.png"
                 alt="Company Logo"
@@ -58,7 +58,7 @@ export default function Footer() {
                 className="w-8 h-8 rounded flex items-center justify-center transition-colors"
                 aria-label="YouTube"
               >
-                <Youtube className="w-6 h-6 text-sky-500" />
+                <Youtube className="w-6 h-6 text-sky-200" />
               </Link>
               {/* <Link
                 href="https://www.linkedin.com/company/arco-engineering-company-ltd"
@@ -76,7 +76,7 @@ export default function Footer() {
                 className="w-8 h-8 rounded flex items-center justify-center transition-colors"
                 aria-label="X (Twitter)"
               >
-                <Twitter className="w-6 h-6 text-sky-500" />
+                <Twitter className="w-6 h-6 text-sky-200" />
               </Link>
               <Link
                 href="https://www.instagram.com"
@@ -85,7 +85,7 @@ export default function Footer() {
                 className="w-8 h-8  rounded flex items-center justify-center  transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-6 h-6 text-sky-500" />
+                <Instagram className="w-6 h-6 text-sky-200" />
               </Link>
               <Link
                 href="https://www.facebook.com/rmorientoverseas/"
@@ -94,7 +94,7 @@ export default function Footer() {
                 className="w-8 h-8  rounded flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-6 h-6 text-sky-500" />
+                <Facebook className="w-6 h-6 text-sky-200" />
               </Link>
             </div>
           </div>
@@ -305,7 +305,7 @@ export default function Footer() {
             {/* Scroll to Top Button */}
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 bg-sky-500/40 rounded-full flex items-center justify-center hover:bg-sky-400 transition-colors cursor-pointer"
+              className="w-10 h-10 bg-sky-600/80 rounded-full flex items-center justify-center hover:bg-sky-400 transition-colors cursor-pointer"
               aria-label="Scroll to top"
             >
               <ChevronRight className="w-4 h-4 text-white rotate-[-90deg]" />

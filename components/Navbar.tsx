@@ -276,7 +276,7 @@ const Navbar = () => {
             {/* CTA Button */}
             <Link
               href="/book-meeting"
-              className="px-6 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-full inline-flex justify-center items-center gap-2.5 transition-colors shadow-md text-white text-base font-semibold"
+              className="px-6 py-2 bg-sky-500 hover:bg-sky-600 rounded-full inline-flex justify-center items-center gap-2.5 transition-colors shadow-md text-white text-base font-semibold"
             >
               Book A Meeting
             </Link>

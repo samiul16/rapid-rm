@@ -3,13 +3,14 @@
 import React from "react";
 import { Bookmark, Check } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Header from "./Header";
 import { motion, Variants } from "framer-motion";
 import DownloadOurApp from "@/components/DownloadOurApp";
-import { useRouter } from "next/navigation";
 
 const CareerPage = () => {
   const router = useRouter();
+
   const jobs = [
     {
       id: 1,
@@ -65,7 +66,11 @@ const CareerPage = () => {
     "Diversity & Inclusion",
   ];
 
-  // Animation variants with proper typing
+  const handleApplyClick = (jobId: number) => {
+    router.push(`/jobs/${jobId}`);
+  };
+
+  // Animation variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -135,7 +140,7 @@ const CareerPage = () => {
                 variants={containerVariants}
               >
                 <motion.h2
-                  className="text-3xl sm:text-4xl font-bold text-cyan-900 leading-10"
+                  className="text-3xl sm:text-4xl font-bold text-sky-500 leading-10"
                   variants={itemVariants}
                 >
                   Why Join With RM
@@ -150,13 +155,13 @@ const CareerPage = () => {
                       whileHover={{ x: 10, transition: { duration: 0.2 } }}
                     >
                       <motion.div
-                        className="w-6 h-6 bg-green-600 rounded-sm flex items-center justify-center flex-shrink-0"
+                        className="w-6 h-6 bg-sky-500 rounded-sm flex items-center justify-center flex-shrink-0"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ duration: 0.2 }}
                       >
                         <Check className="w-4 h-4 text-white" />
                       </motion.div>
-                      <h3 className="text-xl sm:text-2xl font-medium text-cyan-800 leading-normal">
+                      <h3 className="text-xl sm:text-2xl font-medium text-sky-500 leading-normal">
                         {reason}
                       </h3>
                     </motion.div>
@@ -208,7 +213,7 @@ const CareerPage = () => {
           <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16">
             {/* Header */}
             <motion.h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-8 md:mb-10 leading-[48px]"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-sky-500 text-shadow-md mb-8 md:mb-10 leading-[48px]"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -225,14 +230,14 @@ const CareerPage = () => {
               viewport={{ once: true, margin: "-100px" }}
               variants={containerVariants}
             >
-              {jobs.map((job, index) => (
+              {jobs.map((job) => (
                 <motion.div
                   key={job.id}
                   className="bg-white rounded-[32px] shadow-[0px_0px_6px_0px_rgba(0,0,0,0.16)] p-4 sm:p-6 md:p-8 flex flex-col lg:flex-row gap-4 lg:gap-6 items-start lg:items-center transition-shadow"
                   variants={jobCardVariants}
                   whileHover={{
                     scale: 1.02,
-                    boxShadow: "0px 0px 12px 0px rgba(0,0,0,0.12)",
+                    boxShadow: "0px_0px_12px_0px_rgba(0,0,0,0.12)",
                     transition: { duration: 0.3 },
                   }}
                 >
@@ -313,7 +318,8 @@ const CareerPage = () => {
 
                   {/* Apply Button */}
                   <motion.button
-                    className={`w-full lg:w-40 h-10 sm:h-12 px-6 rounded-[84px] flex items-center justify-center transition-all flex-shrink-0 ${
+                    onClick={() => handleApplyClick(job.id)}
+                    className={`w-full lg:w-40 h-10 sm:h-12 px-6 rounded-[84px] flex items-center justify-center transition-all cursor-pointer flex-shrink-0 ${
                       job.featured
                         ? "bg-sky-500 text-white"
                         : "bg-indigo-50 text-sky-500"
@@ -324,9 +330,6 @@ const CareerPage = () => {
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => {
-                      router.push(`/jobs/${job.id}`);
-                    }}
                   >
                     <span className="text-base sm:text-lg font-semibold whitespace-nowrap">
                       Apply Now
