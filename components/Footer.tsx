@@ -21,12 +21,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden">
+    <footer className="relative overflow-hidden bg-sky-500">
       {/* Background Image */}
-      <div
+      {/* <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/footer/footer-bg.png')" }}
-      />
+      /> */}
 
       <div className="relative max-w-8xl mx-auto px-1 sm:px-2 lg:px-20 py-8">
         {/* Main Footer Content */}

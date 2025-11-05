@@ -1,17 +1,22 @@
 "use client";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Search, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import ExpandableSearchBar from "./Common/ExpandableSearchBar";
+import ExpandableSearchBar from "@/components/Common/ExpandableSearchBar";
+import SearchBar from "@/components/Common/SearchBar";
+import UserMenu from "@/components/Common/UserMenu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
+  const userRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -25,6 +30,42 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle search functionality
+  const handleSearch = (query: string) => {
+    console.log("Searching for:", query);
+    // Add your search logic here
+    // For example: router.push(`/search?q=${encodeURIComponent(query)}`);
+  };
+
+  const handleSearchOpen = () => {
+    setIsSearchOpen(true);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleSearchClose = () => {
+    setIsSearchOpen(false);
+  };
+
+  // Handle user menu functionality
+  const handleUserMenuOpen = () => {
+    setIsUserMenuOpen(true);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleUserMenuClose = () => {
+    setIsUserMenuOpen(false);
+  };
+
+  const handleLogin = () => {
+    console.log("Login clicked");
+    // Add your login logic here
+  };
+
+  const handleLogout = () => {
+    console.log("Logout clicked");
+    // Add your logout logic here
+  };
+
   // Handle escape key and outside click
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
@@ -33,6 +74,12 @@ const Navbar = () => {
       }
       if (event.key === "Escape" && isLangDropdownOpen) {
         setIsLangDropdownOpen(false);
+      }
+      if (event.key === "Escape" && isSearchOpen) {
+        setIsSearchOpen(false);
+      }
+      if (event.key === "Escape" && isUserMenuOpen) {
+        setIsUserMenuOpen(false);
       }
     };
 
@@ -51,6 +98,13 @@ const Navbar = () => {
       ) {
         setIsLangDropdownOpen(false);
       }
+      if (
+        isUserMenuOpen &&
+        userRef.current &&
+        !userRef.current.contains(event.target as Node)
+      ) {
+        setIsUserMenuOpen(false);
+      }
     };
 
     if (isMobileMenuOpen) {
@@ -66,12 +120,21 @@ const Navbar = () => {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
+    if (isUserMenuOpen) {
+      document.addEventListener("keydown", handleEscapeKey);
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    if (isSearchOpen) {
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
       document.removeEventListener("mousedown", handleClickOutside);
       document.body.style.overflow = "unset";
     };
-  }, [isMobileMenuOpen, isLangDropdownOpen]);
+  }, [isMobileMenuOpen, isLangDropdownOpen, isSearchOpen, isUserMenuOpen]);
 
   // Handle window resize
   useEffect(() => {
@@ -85,63 +148,41 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobileMenuOpen]);
 
-  // Determine navbar background and text colors
+  // Determine navbar background and text colors - same for all pages
   const getNavbarStyles = () => {
-    if (isHomePage) {
-      return {
-        navBg: isScrolled ? "bg-black/20 backdrop-blur-md" : "bg-transparent",
-        textColor: "text-white",
-        hoverColor: "hover:text-[#1a7ba8]",
-        activeColor: "text-sky-600 font-semibold",
-      };
-    } else {
-      return {
-        navBg: isScrolled ? "bg-white shadow-md" : "bg-white shadow-md",
-        textColor: isScrolled ? "text-blue-400" : "text-blue-400 ",
-        hoverColor: isScrolled ? "hover:text-sky-00" : "hover:text-sky-600",
-        activeColor: isScrolled
-          ? "text-sky-600 font-semibold"
-          : "text-sky-600 font-semibold",
-      };
-    }
+    return {
+      navBg: isScrolled ? "bg-black/20 backdrop-blur-md" : "bg-transparent",
+      textColor: "text-white",
+      hoverColor: "hover:text-sky-500",
+      activeColor: "text-sky-500 font-semibold",
+    };
   };
 
   const styles = getNavbarStyles();
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 transition-all duration-300 py-3 ${styles.navBg} hover:bg-white group`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 py-1 ${styles.navBg} hover:bg-white border-b border-white/10 shadow group`}
       style={{ zIndex: 9998 }}
     >
-      <div className="max-w-[1880px] mx-auto px-4 sm:px-6 2xl:px-14">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-20 pt-2">
+        <div className="flex items-center justify-between h-16 sm:h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 pt-2">
+          <div className="flex-shrink-0">
             <Link href="/">
               <Image
                 src="/rm-logo.png"
                 alt="Company Logo"
                 width={160}
-                height={60}
-                className="h-24 w-auto"
+                height={40}
+                className="h-16 w-auto -pt-2"
               />
             </Link>
           </div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:block">
-            <div className="flex gap-6 lg:gap-10">
-              {/* <Link
-                href="/"
-                className={`${
-                  pathname === "/" ? styles.activeColor : styles.textColor
-                } ${
-                  styles.hoverColor
-                } font-medium transition-colors text-lg font-anek`}
-              >
-                Home
-              </Link> */}
-
+          {/* Navigation Links - Centered */}
+          <div className="hidden md:block flex-1">
+            <div className="flex gap-6 lg:gap-10 justify-center">
               <Link
                 href="/services"
                 className={`${
@@ -150,7 +191,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-semibold transition-colors text-lg font-anek uppercase`}
               >
                 Services
               </Link>
@@ -162,7 +203,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-semibold transition-colors text-lg font-anek uppercase`}
               >
                 Sectors
               </Link>
@@ -174,7 +215,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-semibold transition-colors text-lg font-anek uppercase`}
               >
                 Projects
               </Link>
@@ -184,7 +225,7 @@ const Navbar = () => {
                   pathname === "/career" ? styles.activeColor : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-semibold transition-colors text-lg font-anek uppercase`}
               >
                 Career
               </Link>
@@ -196,7 +237,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-semibold transition-colors text-lg font-anek uppercase`}
               >
                 About
               </Link>
@@ -208,7 +249,7 @@ const Navbar = () => {
                     : styles.textColor
                 } ${
                   styles.hoverColor
-                } group-hover:text-sky-500 font-medium transition-colors text-lg font-anek`}
+                } group-hover:text-sky-500 font-semibold transition-colors text-lg font-anek uppercase`}
               >
                 Contact
               </Link>
@@ -216,109 +257,38 @@ const Navbar = () => {
           </div>
 
           {/* Right Side Controls */}
-          <div className="hidden md:flex items-center space-x-6">
-            {/* Search Bar */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Expandable Search */}
             <ExpandableSearchBar
-              onSearch={(query) => {
-                // Handle search functionality here
-                console.log("Search query:", query);
-                // You can implement navigation to search results page or filter content
-              }}
-              placeholder="Search services, projects..."
-              suggestions={[
-                "Construction Services",
-                "Engineering Solutions",
-                "Project Management",
-                "Industrial Services",
-                "Oil & Gas Projects",
-                "Infrastructure Development",
-              ]}
+              onSearch={handleSearch}
+              placeholder="Search..."
               iconColor={styles.textColor}
-              hoverIconColor="group-hover:text-sky-500"
+              hoverIconColor={styles.hoverColor}
+              suggestions={[
+                "Services",
+                "Projects",
+                "About Us",
+                "Career Opportunities",
+                "Contact Information",
+              ]}
             />
-
-            {/* Language Selector with Flag */}
-            {/* <div className="relative" ref={langRef}>
-              <button
-                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="flex items-center space-x-2 rounded-full px-3 py-2 hover:bg-white/10 transition-colors cursor-pointer"
-              >
-                <Image
-                  src="https://flagcdn.com/w40/us.png"
-                  alt="English"
-                  width={24}
-                  height={16}
-                  className="rounded-sm"
-                />
-                <ChevronDown
-                  className={`${
-                    styles.textColor
-                  } group-hover:text-sky-500 w-5 h-5 transition-transform ${
-                    isLangDropdownOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {isLangDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                  <button
-                    onClick={() => {
-                      setIsLangDropdownOpen(false);
-                      // Handle language change to English
-                    }}
-                    className="w-full flex items-center space-x-3 px-4 py-2 hover:bg-gray-100 transition-colors text-left cursor-pointer"
-                  >
-                    <Image
-                      src="https://flagcdn.com/w40/us.png"
-                      alt="English"
-                      width={24}
-                      height={16}
-                      className="rounded-sm"
-                    />
-                    <span className="text-gray-800 text-sm font-medium">
-                      English
-                    </span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      setIsLangDropdownOpen(false);
-                      // Handle language change to Arabic
-                    }}
-                    className="w-full flex items-center space-x-3 px-4 py-2 hover:bg-gray-100 transition-colors text-left cursor-pointer"
-                  >
-                    <Image
-                      src="https://flagcdn.com/w40/sa.png"
-                      alt="Arabic"
-                      width={24}
-                      height={16}
-                      className="rounded-sm"
-                    />
-                    <span className="text-gray-800 text-sm font-medium">
-                      العربية
-                    </span>
-                  </button>
-                </div>
-              )}
-            </div> */}
 
             {/* CTA Button */}
             <Link
               href="/book-meeting"
-              className={`w-44 h-10 px-5 py-3 ${
-                isHomePage
-                  ? "bg-blue-400 hover:bg-sky-500"
-                  : "bg-sky-500 hover:bg-sky-600"
-              } rounded-[30px] inline-flex justify-center items-center gap-2.5 transition-colors shadow`}
+              className="px-6 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-full inline-flex justify-center items-center gap-2.5 transition-colors shadow-md text-white text-base font-semibold"
             >
-              <span className="text-indigo-50 text-base font-medium">
-                Book A Meeting
-              </span>
+              Book A Meeting
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+                setIsSearchOpen(false);
+              }}
               className={`relative w-11 h-11 ${styles.textColor} group-hover:text-sky-500 hover:opacity-50 transition-colors flex items-center justify-center cursor-pointer`}
               aria-expanded={isMobileMenuOpen}
               aria-label="Toggle mobile menu"
@@ -380,7 +350,7 @@ const Navbar = () => {
         <div className="absolute top-6 right-6">
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="w-10 h-10 text-white hover:text-red-400 transition-colors flex items-center justify-center rounded-full hover:bg-white/10 cursor-pointer"
+            className="w-10 h-10 text-white hover:text-sky-500 transition-colors flex items-center justify-center rounded-full hover:bg-white/10 cursor-pointer"
             aria-label="Close mobile menu"
           >
             <svg
@@ -403,37 +373,28 @@ const Navbar = () => {
           {/* Mobile Navigation Links */}
           <div className="flex flex-col space-y-6">
             <Link
-              href="/"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`${
-                pathname === "/" ? "text-sky-400" : "text-white/80"
-              } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about-us"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`${
-                pathname === "/about-us" ? "text-sky-400" : "text-white/80"
-              } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
-            >
-              About
-            </Link>
-            <Link
               href="/services"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`${
-                pathname === "/services" ? "text-sky-400" : "text-white/80"
+                pathname === "/services" ? "text-sky-500" : "text-white/80"
               } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
             >
               Services
             </Link>
             <Link
+              href="/sectors"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`${
+                pathname === "/sectors" ? "text-sky-500" : "text-white/80"
+              } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
+            >
+              Sectors
+            </Link>
+            <Link
               href="/projects"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`${
-                pathname === "/projects" ? "text-sky-400" : "text-white/80"
+                pathname === "/projects" ? "text-sky-500" : "text-white/80"
               } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
             >
               Projects
@@ -442,16 +403,25 @@ const Navbar = () => {
               href="/career"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`${
-                pathname === "/career" ? "text-sky-400" : "text-white/80"
+                pathname === "/career" ? "text-sky-500" : "text-white/80"
               } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
             >
               Career
             </Link>
             <Link
+              href="/about-us"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`${
+                pathname === "/about-us" ? "text-sky-500" : "text-white/80"
+              } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
+            >
+              About
+            </Link>
+            <Link
               href="/contact-us"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`${
-                pathname === "/contact-us" ? "text-sky-400" : "text-white/80"
+                pathname === "/contact-us" ? "text-sky-500" : "text-white/80"
               } hover:text-sky-500 font-semibold transition-colors text-xl py-2 font-anek`}
             >
               Contact
@@ -461,56 +431,72 @@ const Navbar = () => {
           {/* Mobile Search Bar */}
           <div className="mt-8 mb-6">
             <ExpandableSearchBar
-              onSearch={(query) => {
-                // Handle search functionality here
-                console.log("Mobile search query:", query);
-                setIsMobileMenuOpen(false); // Close mobile menu after search
-                // You can implement navigation to search results page or filter content
-              }}
-              placeholder="Search services, projects..."
-              suggestions={[
-                "Construction Services",
-                "Engineering Solutions",
-                "Project Management",
-                "Industrial Services",
-                "Oil & Gas Projects",
-                "Infrastructure Development",
-              ]}
+              onSearch={handleSearch}
+              placeholder="Search..."
               iconColor="text-white/80"
               hoverIconColor="hover:text-sky-500"
               className="w-full"
+              suggestions={[
+                "Services",
+                "Projects",
+                "About Us",
+                "Career Opportunities",
+                "Contact Information",
+              ]}
             />
           </div>
 
-          {/* Mobile Language Selector */}
-          {/* <div className="mt-8 mb-4">
-            <div className="flex items-center space-x-3 px-3 py-2 bg-white/10 rounded-lg">
-              <Image
-                src="https://flagcdn.com/w40/us.png"
-                alt="English"
-                width={24}
-                height={16}
-                className="rounded-sm"
-              />
-              <span className="text-white/90 text-base font-medium">
-                English
-              </span>
-            </div>
-          </div> */}
+          {/* Mobile Action Icons */}
+          <div className="mt-4 flex items-center justify-around mb-6">
+            <button
+              onClick={handleUserMenuOpen}
+              className="text-white/80 hover:text-sky-400 p-3 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+              aria-label="User Account"
+            >
+              <User className="w-6 h-6" />
+            </button>
+          </div>
 
-          {/* Mobile Book Now Button */}
+          {/* Mobile Book Meeting Button */}
           <div>
             <Link
               href="/book-meeting"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-44 h-10 px-5 py-3 bg-blue-400 rounded-[30px] inline-flex justify-center items-center gap-2.5 hover:bg-blue-500 transition-colors"
+              className="w-full px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-full inline-flex justify-center items-center gap-2.5 transition-colors shadow-md text-white text-base font-semibold"
             >
-              <span className="text-indigo-50 text-base font-medium">
-                Book A Meeting
-              </span>
+              Book A Meeting
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Search Bar Component */}
+      <SearchBar
+        isOpen={isSearchOpen}
+        onClose={handleSearchClose}
+        onSearch={handleSearch}
+        placeholder="Search services, projects, information..."
+        suggestions={[
+          "Services",
+          "Projects",
+          "About Us",
+          "Career Opportunities",
+          "Contact Information",
+          "Sectors We Serve",
+        ]}
+      />
+
+      {/* Mobile User Menu Component */}
+      <div className="md:hidden">
+        <UserMenu
+          isOpen={isUserMenuOpen}
+          onClose={handleUserMenuClose}
+          isLoggedIn={false}
+          userName="John Doe"
+          userEmail="john@example.com"
+          onLogin={handleLogin}
+          onLogout={handleLogout}
+        />
       </div>
     </nav>
   );

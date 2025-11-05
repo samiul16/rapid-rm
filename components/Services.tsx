@@ -4,8 +4,11 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ServicesSection = () => {
+  const router = useRouter();
+
   // Animation Variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -114,7 +117,7 @@ const ServicesSection = () => {
                     className="w-16 h-16"
                   />
                 </div>
-                <h3 className="text-cyan-800  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
+                <h3 className="text-sky-500  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
                   On-Demand Labour
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
@@ -122,14 +125,15 @@ const ServicesSection = () => {
                   meet your urgent project requirements. Reliable, flexible, and
                   ready when you need them most.
                 </p>
-                <Link href="/services" className="w-full">
-                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                      Explore More
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </button>
-                </Link>
+                <button
+                  className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors"
+                  onClick={() => router.push("/services")}
+                >
+                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                    Explore More
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
               </div>
             </motion.div>
 
@@ -153,7 +157,7 @@ const ServicesSection = () => {
                     className="w-16 h-16"
                   />
                 </div>
-                <h3 className="text-cyan-800  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
+                <h3 className="text-sky-500  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
                   Executive Staffing
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
@@ -161,14 +165,15 @@ const ServicesSection = () => {
                   and management roles — ensuring expertise, efficiency, and
                   long-term business growth.
                 </p>
-                <Link href="/services" className="w-full">
-                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                      Explore More
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </button>
-                </Link>
+                <button
+                  className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors cursor-pointer"
+                  onClick={() => router.push("/services")}
+                >
+                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                    Explore More
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
               </div>
             </motion.div>
 
@@ -192,7 +197,7 @@ const ServicesSection = () => {
                     className="w-16 h-16"
                   />
                 </div>
-                <h3 className="text-cyan-800  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
+                <h3 className="text-sky-500  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
                   PRO Services
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
@@ -200,14 +205,15 @@ const ServicesSection = () => {
                   processing services to save your time and ensure compliance
                   with legal standards.
                 </p>
-                <Link href="/services" className="w-full">
-                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                      Explore More
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </button>
-                </Link>
+                <button
+                  className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors cursor-pointer"
+                  onClick={() => router.push("/services")}
+                >
+                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                    Explore More
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
               </div>
             </motion.div>
 
@@ -231,21 +237,22 @@ const ServicesSection = () => {
                     className="w-16 h-16"
                   />
                 </div>
-                <h3 className="text-cyan-800  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
+                <h3 className="text-sky-500  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
                   PEO Services
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
                   Our PEO services help businesses manage HR, payroll, and
                   compliance seamlessly while they focus on core operations.
                 </p>
-                <Link href="/services" className="w-full">
-                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                      Explore More
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </button>
-                </Link>
+                <button
+                  className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors cursor-pointer"
+                  onClick={() => router.push("/services")}
+                >
+                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                    Explore More
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
               </div>
             </motion.div>
           </div>
@@ -272,7 +279,7 @@ const ServicesSection = () => {
                     className="w-16 h-16"
                   />
                 </div>
-                <h3 className="text-cyan-800  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
+                <h3 className="text-sky-500  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
                   EoR Services
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
@@ -280,14 +287,15 @@ const ServicesSection = () => {
                   benefits, and compliance — making overseas hiring smooth and
                   risk-free.
                 </p>
-                <Link href="/services" className="w-full">
-                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                      Explore More
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </button>
-                </Link>
+                <button
+                  className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors cursor-pointer"
+                  onClick={() => router.push("/services")}
+                >
+                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                    Explore More
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
               </div>
             </motion.div>
 
@@ -311,7 +319,7 @@ const ServicesSection = () => {
                     className="w-16 h-16"
                   />
                 </div>
-                <h3 className="text-cyan-800  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
+                <h3 className="text-sky-500  text-2xl md:text-2xl font-semibold font-['Anek_Malayalam'] leading-9 mb-4">
                   Recruitment Process
                 </h3>
                 <p className="text-cyan-800 text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-6">
@@ -319,14 +327,15 @@ const ServicesSection = () => {
                   sourcing to onboarding — ensuring you get the best candidates
                   faster and more efficiently.
                 </p>
-                <Link href="/services" className="w-full">
-                  <button className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors">
-                    <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
-                      Explore More
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </button>
-                </Link>
+                <button
+                  className="w-full px-5 py-2.5 bg-sky-500 hover:bg-sky-600 rounded-2xl flex justify-between items-center transition-colors cursor-pointer"
+                  onClick={() => router.push("/services")}
+                >
+                  <span className="text-white text-base font-semibold font-['Anek_Malayalam'] leading-relaxed">
+                    Explore More
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
               </div>
             </motion.div>
 
@@ -337,10 +346,10 @@ const ServicesSection = () => {
               className="lg:col-span-6 bg-gradient-to-l from-white/25 to-sky-500 rounded-[20px] shadow relative overflow-hidden min-h-[350px] flex items-center cursor-pointer border border-sky-100"
             >
               <div className="relative z-10 p-10 md:p-15 max-w-md">
-                <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-[48px] font-['Anek_Malayalam']">
+                <h2 className="text-3xl md:text-4xl font-semibold text-white text-shadow-md mb-6 leading-[48px] font-['Anek_Malayalam']">
                   Solutions That Work, Just in Time
                 </h2>
-                <p className="text-white text-base font-normal font-['Anek_Malayalam'] leading-relaxed mb-8 max-w-sm">
+                <p className="text-white text-base text-shadow-md font-normal font-['Anek_Malayalam'] leading-relaxed mb-8 max-w-sm">
                   Your business deserves a workforce that&apos;s fast, reliable,
                   and perfectly aligned with your goals. Ontime delivers
                   tailored solutions that help you plan, grow, and succeed every
@@ -364,9 +373,9 @@ const ServicesSection = () => {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white rounded-[20px] outline-1 outline-zinc-200 hover:bg-gray-50 transition-colors shadow flex items-center overflow-hidden cursor-pointer"
+                  className="bg-white rounded-full outline-1 outline-zinc-200 hover:bg-gray-50 transition-colors shadow-2xl flex items-center overflow-hidden cursor-pointer"
                 >
-                  <div className="bg-sky-500 rounded-2xl p-4 m-4">
+                  <div className="bg-sky-500 rounded-full p-2 m-4">
                     <ArrowRight className="w-4 h-4 text-white" />
                   </div>
                   <span className="px-6 text-sky-500  text-base font-['Anek_Malayalam'] capitalize font-semibold">

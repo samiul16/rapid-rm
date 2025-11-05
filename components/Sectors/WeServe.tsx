@@ -83,7 +83,7 @@ const SectorsWeServe = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-sky-500 text-center leading-[48px]">
+          <h2 className="text-5xl sm:text-5xl font-extrabold text-sky-500 text-shadow-md text-center leading-[48px]">
             Sectors We Serve
           </h2>
           <p className="text-base text-cyan-900 text-center max-w-3xl leading-normal">
@@ -94,7 +94,7 @@ const SectorsWeServe = () => {
 
         {/* Sectors Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -110,18 +110,17 @@ const SectorsWeServe = () => {
                 variants={cardVariants}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <div className="h-36 2xl:h-[300px] p-5 bg-white rounded-[10px] shadow-[0px_0px_4px_0px_rgba(0,0,0,0.16)] flex flex-col justify-center items-center gap-4 transition-shadow duration-300 group-hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)]">
+                <div className="h-36 2xl:h-[240px] p-5 bg-white rounded-[16px] shadow-xl flex flex-col justify-center items-center gap-4 transition-shadow duration-300 group-hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)]">
                   {/* Icon Container */}
                   <motion.div
-                    className="w-14 h-14 bg-sky-100 rounded-[10px] flex justify-center items-center group-hover:bg-sky-200 transition-colors duration-300"
+                    className="w-48 h-24 bg-gradient-to-br from-sky-600 to-sky-400 rounded-[20px] border-[1px] border-sky-600 flex justify-center items-center group-hover:bg-sky-200 transition-colors duration-300 shadow-md"
                     variants={iconVariants}
-                    whileHover="hover"
                   >
-                    <Icon className="w-6 h-6 text-cyan-600 group-hover:text-sky-500 transition-colors duration-300" />
+                    <Icon className="w-16 h-16 text-white transition-colors duration-300" />
                   </motion.div>
 
                   {/* Sector Name */}
-                  <h3 className="text-base font-bold text-cyan-600 text-center leading-tight">
+                  <h3 className="text-base font-bold text-sky-500 text-[20px] text-center leading-tight">
                     {sector.name}
                   </h3>
                 </div>
