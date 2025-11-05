@@ -1,8 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
-import { motion } from "framer-motion";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
 
 export default function ContactFormSection() {
@@ -15,6 +22,7 @@ export default function ContactFormSection() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -107,7 +115,7 @@ export default function ContactFormSection() {
   ];
 
   return (
-    <section className="py-12 lg:py-24 bg-gray-50">
+    <section className="py-12 lg:py-24 bg-white">
       <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left Side - Contact Info Cards */}
@@ -169,75 +177,130 @@ export default function ContactFormSection() {
 
             <form
               onSubmit={handleSubmit}
-              className="space-y-5 flex-1 flex flex-col"
+              className="space-y-6 flex-1 flex flex-col"
             >
-              <div className="flex-1 space-y-5">
-                {/* Name Input */}
-                <div>
+              <div className="flex-1 space-y-6">
+                {/* Name Input - Floating Label */}
+                <div className="relative">
                   <input
                     type="text"
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    placeholder="Name"
+                    onFocus={() => setFocusedField("fullName")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder=" "
                     required
                     disabled={isSubmitting}
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   />
+                  <label
+                    className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none font-['Anek_Malayalam'] ${
+                      formData.fullName || focusedField === "fullName"
+                        ? "-translate-y-1/2 text-xs text-sky-500"
+                        : "translate-y-3 text-base text-gray-500"
+                    }`}
+                  >
+                    Name
+                  </label>
                 </div>
 
-                {/* Phone Input */}
-                <div>
+                {/* Phone Input - Floating Label */}
+                <div className="relative">
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Phone"
+                    onFocus={() => setFocusedField("phone")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder=" "
                     required
                     disabled={isSubmitting}
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   />
+                  <label
+                    className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none font-['Anek_Malayalam'] ${
+                      formData.phone || focusedField === "phone"
+                        ? "-translate-y-1/2 text-xs text-sky-500"
+                        : "translate-y-3 text-base text-gray-500"
+                    }`}
+                  >
+                    Phone
+                  </label>
                 </div>
 
-                {/* Email Input */}
-                <div>
+                {/* Email Input - Floating Label */}
+                <div className="relative">
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Email"
+                    onFocus={() => setFocusedField("email")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder=" "
                     required
                     disabled={isSubmitting}
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   />
+                  <label
+                    className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none font-['Anek_Malayalam'] ${
+                      formData.email || focusedField === "email"
+                        ? "-translate-y-1/2 text-xs text-sky-500"
+                        : "translate-y-3 text-base text-gray-500"
+                    }`}
+                  >
+                    Email
+                  </label>
                 </div>
 
-                {/* Description Input */}
-                <div>
+                {/* Description Input - Floating Label */}
+                <div className="relative">
                   <input
                     type="text"
                     name="description"
                     value={formData.description}
                     onChange={handleChange}
-                    placeholder="Description"
+                    onFocus={() => setFocusedField("description")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder=" "
                     disabled={isSubmitting}
-                    className="w-full p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   />
+                  <label
+                    className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none font-['Anek_Malayalam'] ${
+                      formData.description || focusedField === "description"
+                        ? "-translate-y-1/2 text-xs text-sky-500"
+                        : "translate-y-3 text-base text-gray-500"
+                    }`}
+                  >
+                    Description
+                  </label>
                 </div>
 
-                {/* Message Textarea */}
-                <div className="flex-1">
+                {/* Message Textarea - Floating Label */}
+                <div className="relative flex-1">
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Message"
+                    onFocus={() => setFocusedField("message")}
+                    onBlur={() => setFocusedField(null)}
+                    placeholder=" "
                     required
                     disabled={isSubmitting}
-                    className="w-full h-full min-h-[112px] p-3.5 bg-white rounded-[10px] border-b-2 border-cyan-900 text-cyan-900 placeholder:text-cyan-900/70 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full h-full min-h-[120px] px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base font-normal font-['Anek_Malayalam'] focus:outline-none focus:border-sky-500 transition-all resize-none peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                   />
+                  <label
+                    className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none font-['Anek_Malayalam'] ${
+                      formData.message || focusedField === "message"
+                        ? "-translate-y-1/2 text-xs text-sky-500"
+                        : "translate-y-3 text-base text-gray-500"
+                    }`}
+                  >
+                    Message
+                  </label>
                 </div>
               </div>
 
@@ -245,9 +308,9 @@ export default function ContactFormSection() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
-                whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
-                className="px-8 py-4 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-[30px] text-white text-xl font-bold font-['Anek_Malayalam'] uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed mt-6"
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                className="px-8 py-4 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-full text-white text-xl font-bold font-['Anek_Malayalam'] uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed shadow-lg"
               >
                 {isSubmitting ? (
                   <>
