@@ -39,7 +39,7 @@ export default function Footer() {
                 alt="Company Logo"
                 width={160}
                 height={80}
-                className="h-24 w-24 "
+                className="h-20 w-20 "
               />
             </div>
 
@@ -266,7 +266,7 @@ export default function Footer() {
             <h3 className="text-white text-2xl font-semibold mt-8 mb-2">
               Contact Us
             </h3>
-            <div className="space-y-3 flex-grow">
+            <div className="space-y-6 flex-grow">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
                 <div className="text-white text-md leading-relaxed">
