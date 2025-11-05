@@ -14,8 +14,10 @@ import {
   Upload,
   X,
   FileText,
+  Send,
 } from "lucide-react";
 import { useRouter, useParams } from "next/navigation";
+import toast from "react-hot-toast";
 import Header from "../../career/Header";
 import DownloadOurApp from "@/components/DownloadOurApp";
 
@@ -56,10 +58,7 @@ const JobApplicationPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   // Job data - In production, fetch this from API/database
   const jobs: Job[] = [
@@ -199,7 +198,7 @@ const JobApplicationPage = () => {
               Job Not Found
             </h1>
             <button
-              onClick={() => router.push("/careers")}
+              onClick={() => router.push("/career")}
               className="text-sky-500 hover:text-sky-600"
             >
               Back to Careers
@@ -227,26 +226,30 @@ const JobApplicationPage = () => {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       ];
       if (!allowedTypes.includes(file.type)) {
-        alert("Please upload a PDF or Word document");
+        toast.error("Please upload a PDF or Word document");
         return;
       }
       // Validate file size (5MB max)
       if (file.size > 5 * 1024 * 1024) {
-        alert("File size should not exceed 5MB");
+        toast.error("File size should not exceed 5MB");
         return;
       }
       setFormData((prev) => ({ ...prev, cv: file }));
+      toast.success("File uploaded successfully!");
     }
   };
 
   const removeFile = () => {
     setFormData((prev) => ({ ...prev, cv: null }));
+    toast.success("File removed");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
+
+    // Show loading toast
+    const loadingToast = toast.loading("Submitting your application...");
 
     try {
       // Create FormData for file upload
@@ -269,12 +272,17 @@ const JobApplicationPage = () => {
 
       const data = await response.json();
 
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
       if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message:
-            "Thank you for your application! We have received your CV and will review it shortly. We'll contact you if your profile matches our requirements.",
-        });
+        toast.success(
+          "Thank you for your application! We have received your CV and will review it shortly.",
+          {
+            duration: 6000,
+          }
+        );
+
         // Reset form
         setFormData({
           fullName: "",
@@ -285,20 +293,24 @@ const JobApplicationPage = () => {
           cv: null,
         });
 
-        // Scroll to success message
+        // Scroll to top
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        setSubmitStatus({
-          type: "error",
-          message:
-            data.error || "Failed to submit application. Please try again.",
-        });
+        toast.error(
+          data.error || "Failed to submit application. Please try again.",
+          {
+            duration: 4000,
+          }
+        );
       }
     } catch (error) {
       console.error("Error submitting application:", error);
-      setSubmitStatus({
-        type: "error",
-        message: "An error occurred. Please try again later.",
+
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
+
+      toast.error("An error occurred. Please try again later.", {
+        duration: 4000,
       });
     } finally {
       setIsSubmitting(false);
@@ -332,7 +344,7 @@ const JobApplicationPage = () => {
             >
               {/* Job Header */}
               <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8">
-                <h1 className="text-3xl md:text-4xl font-bold text-cyan-900 mb-6">
+                <h1 className="text-3xl md:text-4xl font-bold text-sky-500 mb-6">
                   {job.title}
                 </h1>
 
@@ -344,7 +356,7 @@ const JobApplicationPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Job Type</p>
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-sky-500">
                         {job.jobType}
                       </p>
                     </div>
@@ -356,7 +368,7 @@ const JobApplicationPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Location</p>
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-sky-500">
                         {job.location}
                       </p>
                     </div>
@@ -368,7 +380,7 @@ const JobApplicationPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Experience</p>
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-sky-500">
                         {job.experience}
                       </p>
                     </div>
@@ -380,7 +392,7 @@ const JobApplicationPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Deadline</p>
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-sky-500">
                         {job.deadline}
                       </p>
                     </div>
@@ -388,16 +400,16 @@ const JobApplicationPage = () => {
                 </div>
 
                 {job.salary && (
-                  <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg">
-                    <DollarSign className="w-5 h-5 text-green-600" />
-                    <p className="text-green-900 font-medium">{job.salary}</p>
+                  <div className="flex items-center gap-3 p-4 bg-sky-50 rounded-lg">
+                    <DollarSign className="w-5 h-5 text-sky-600" />
+                    <p className="text-sky-900 font-medium">{job.salary}</p>
                   </div>
                 )}
               </div>
 
               {/* Job Description */}
               <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-cyan-900 mb-4">
+                <h2 className="text-2xl font-bold text-sky-500 mb-4">
                   Job Description
                 </h2>
                 <p className="text-gray-700 leading-relaxed">
@@ -407,7 +419,7 @@ const JobApplicationPage = () => {
 
               {/* Responsibilities */}
               <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-cyan-900 mb-4">
+                <h2 className="text-2xl font-bold text-sky-500 mb-4">
                   Key Responsibilities
                 </h2>
                 <ul className="space-y-3">
@@ -419,7 +431,7 @@ const JobApplicationPage = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{item}</span>
                     </motion.li>
                   ))}
@@ -428,7 +440,7 @@ const JobApplicationPage = () => {
 
               {/* Requirements */}
               <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-cyan-900 mb-4">
+                <h2 className="text-2xl font-bold text-sky-500 mb-4">
                   Requirements
                 </h2>
                 <ul className="space-y-3">
@@ -456,102 +468,109 @@ const JobApplicationPage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 sticky top-8">
-                <h2 className="text-2xl font-bold text-cyan-900 mb-6">
+                <h2 className="text-2xl font-bold text-sky-500 mb-6">
                   Apply for this Position
                 </h2>
 
-                {/* Status Messages */}
-                <AnimatePresence>
-                  {submitStatus.type && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className={`mb-6 p-4 rounded-lg flex items-start gap-3 ${
-                        submitStatus.type === "success"
-                          ? "bg-green-50 text-green-800 border border-green-200"
-                          : "bg-red-50 text-red-800 border border-red-200"
-                      }`}
-                    >
-                      {submitStatus.type === "success" ? (
-                        <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                      ) : (
-                        <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                      )}
-                      <p className="text-sm font-medium leading-relaxed">
-                        {submitStatus.message}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* Full Name */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Full Name - Floating Label */}
+                  <div className="relative">
                     <input
                       type="text"
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("fullName")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.fullName || focusedField === "fullName"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Full Name *
+                    </label>
                   </div>
 
-                  {/* Email */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
+                  {/* Email - Floating Label */}
+                  <div className="relative">
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("email")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-                      placeholder="john@example.com"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.email || focusedField === "email"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Email Address *
+                    </label>
                   </div>
 
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
+                  {/* Phone - Floating Label */}
+                  <div className="relative">
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("phone")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-                      placeholder="+966 56 392 9597"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.phone || focusedField === "phone"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Phone Number *
+                    </label>
                   </div>
 
-                  {/* Years of Experience */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Years of Experience *
-                    </label>
+                  {/* Years of Experience - Floating Label */}
+                  <div className="relative">
                     <input
                       type="text"
                       name="experience"
                       value={formData.experience}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("experience")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-                      placeholder="e.g., 5 years"
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base focus:outline-none focus:border-sky-500 transition-all peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.experience || focusedField === "experience"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Years of Experience *
+                    </label>
                   </div>
 
                   {/* CV Upload */}
@@ -599,7 +618,7 @@ const JobApplicationPage = () => {
                           type="button"
                           onClick={removeFile}
                           disabled={isSubmitting}
-                          className="p-1 hover:bg-red-100 rounded-full transition-colors disabled:opacity-50"
+                          className="p-1 hover:bg-red-100 rounded-full transition-colors disabled:opacity-50 cursor-pointer"
                         >
                           <X className="w-5 h-5 text-red-500" />
                         </button>
@@ -607,27 +626,35 @@ const JobApplicationPage = () => {
                     )}
                   </div>
 
-                  {/* Cover Letter */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Cover Letter
-                    </label>
+                  {/* Cover Letter - Floating Label */}
+                  <div className="relative">
                     <textarea
                       name="coverLetter"
                       value={formData.coverLetter}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField("coverLetter")}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder=" "
                       rows={4}
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-                      placeholder="Tell us why you're a great fit for this position..."
+                      className="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 text-gray-900 text-base focus:outline-none focus:border-sky-500 transition-all resize-none peer placeholder-transparent disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50"
                     />
+                    <label
+                      className={`absolute left-3 top-0 bg-white px-1 transition-all duration-200 pointer-events-none ${
+                        formData.coverLetter || focusedField === "coverLetter"
+                          ? "-translate-y-1/2 text-xs text-sky-500"
+                          : "translate-y-3 text-base text-gray-500"
+                      }`}
+                    >
+                      Cover Letter (Optional)
+                    </label>
                   </div>
 
                   {/* Submit Button */}
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 text-white font-semibold rounded-full transition-colors disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 text-white font-semibold rounded-full transition-colors disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >
@@ -637,7 +664,10 @@ const JobApplicationPage = () => {
                         Submitting...
                       </>
                     ) : (
-                      "Submit Application"
+                      <>
+                        Submit Application
+                        <Send className="w-5 h-5" />
+                      </>
                     )}
                   </motion.button>
                 </form>

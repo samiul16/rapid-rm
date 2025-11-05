@@ -71,7 +71,7 @@ const OurServices = () => {
     {
       title: "Manufacturing",
       description:
-        "ARCO provides trained factory workers, machine operators, welders, and assembly line specialists who maintain productivity and quality across your manufacturing processes. We ensure each candidate is evaluated for skill and discipline.",
+        "RM provides trained factory workers, machine operators, welders, and assembly line specialists who maintain productivity and quality across your manufacturing processes. We ensure each candidate is evaluated for skill and discipline.",
       icon: Factory,
       gradient: "from-cyan-500 to-blue-600",
     },
@@ -105,7 +105,7 @@ const OurServices = () => {
               Our Services
             </h2>
           </div>
-          <div className="w-11 h-1 bg-cyan-600 rounded-[30px]" />
+          <div className="w-11 h-1 bg-sky-600 rounded-[30px]" />
         </div>
 
         {/* Services Grid */}

@@ -80,7 +80,7 @@ const WhoWeAre = () => {
           >
             {/* About RM Section */}
             <motion.div className="flex flex-col gap-6" variants={itemVariants}>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-cyan-800 leading-10 tracking-widest">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-sky-500 leading-10 tracking-widest">
                 About RM
               </h2>
               <p className="text-base text-zinc-600 leading-relaxed text-justify">
@@ -153,7 +153,7 @@ const WhoWeAre = () => {
                                 •
                               </span>
                               <span>
-                                <strong className="text-cyan-800">
+                                <strong className="text-sky-500">
                                   Integrity:
                                 </strong>{" "}
                                 We uphold honesty and transparency in every
@@ -165,7 +165,7 @@ const WhoWeAre = () => {
                                 •
                               </span>
                               <span>
-                                <strong className="text-cyan-800">
+                                <strong className="text-sky-500">
                                   Reliability:
                                 </strong>{" "}
                                 Always ready to deliver, no matter how urgent or
@@ -177,7 +177,7 @@ const WhoWeAre = () => {
                                 •
                               </span>
                               <span>
-                                <strong className="text-cyan-800">
+                                <strong className="text-sky-500">
                                   Excellence:
                                 </strong>{" "}
                                 We strive for quality and perfection in every
@@ -189,7 +189,7 @@ const WhoWeAre = () => {
                                 •
                               </span>
                               <span>
-                                <strong className="text-cyan-800">
+                                <strong className="text-sky-500">
                                   Customer Focus:
                                 </strong>{" "}
                                 Your goals are our priority — we grow by helping
@@ -201,7 +201,7 @@ const WhoWeAre = () => {
                                 •
                               </span>
                               <span>
-                                <strong className="text-cyan-800">
+                                <strong className="text-sky-500">
                                   Innovation:
                                 </strong>{" "}
                                 We continuously improve to meet the evolving
@@ -231,7 +231,7 @@ const WhoWeAre = () => {
                 className="flex items-center gap-2"
                 whileHover={{ x: 5, transition: { duration: 0.2 } }}
               >
-                <Award className="w-9 h-9 text-sky-800" />
+                <Award className="w-9 h-9 text-sky-500" />
                 <span className="text-base text-neutral-900 leading-loose">
                   Certified Company
                 </span>

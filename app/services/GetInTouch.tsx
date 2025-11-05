@@ -86,26 +86,26 @@ const GetInTouch = () => {
   return (
     <section className="bg-[#051C36] py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-18 items-stretch min-h-[600px]">
           {/* Left Side - Image */}
           <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-xl">
-              <div className="rounded-2xl p-2 shadow-2xl">
+            <div className="relative w-full max-w-xl h-full flex items-center">
+              <div className="rounded-2xl p-2 shadow-2xl w-full">
                 <Image
                   src="/get.png"
                   alt="Professional team working together"
                   width={500}
                   height={400}
-                  className="w-full h-auto rounded-2xl object-cover"
+                  className="w-full h-[600px] rounded-2xl object-cover"
                 />
               </div>
             </div>
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-xl">
-              <div className="bg-[#0a2540] backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-slate-600/30">
+          <div className="flex items-stretch justify-center">
+            <div className="w-full max-w-xl flex">
+              <div className="bg-[#0a2540] backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-slate-600/30 flex-1 flex flex-col w-full">
                 <h2 className="text-white text-3xl lg:text-4xl font-bold mb-3">
                   Get In Touch
                 </h2>
@@ -135,10 +135,7 @@ const GetInTouch = () => {
                   )}
                 </AnimatePresence>
 
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-6 flex-1 flex flex-col"
-                >
+                <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
                   <div className="flex-1 space-y-6">
                     {/* Name Input - Floating Label */}
                     <div className="relative">
@@ -265,25 +262,27 @@ const GetInTouch = () => {
                   </div>
 
                   {/* Submit Button */}
-                  <motion.button
-                    type="submit"
-                    disabled={isSubmitting}
-                    whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                    whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className="px-8 py-4 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-full text-white text-xl font-bold font-['Anek_Malayalam'] uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed shadow-lg"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        SENDING...
-                      </>
-                    ) : (
-                      <>
-                        SUBMIT
-                        <Send className="w-5 h-5" />
-                      </>
-                    )}
-                  </motion.button>
+                  <div className="mt-6">
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                      className="w-full px-8 py-3 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 rounded-full text-white text-xl font-bold font-['Anek_Malayalam'] uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed shadow-lg cursor-pointer"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          SENDING...
+                        </>
+                      ) : (
+                        <>
+                          SUBMIT
+                          <Send className="w-5 h-5" />
+                        </>
+                      )}
+                    </motion.button>
+                  </div>
                 </form>
               </div>
             </div>
