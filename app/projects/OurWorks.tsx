@@ -216,7 +216,7 @@ const ProjectsShowcase = () => {
                 variants={categoryVariants}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`px-4 md:px-6 py-2 md:py-2 text-sm md:text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                className={`px-4 md:px-6 py-2 md:py-2 text-md md:text-md font-semibold rounded-full transition-all duration-300 whitespace-nowrap cursor-pointer ${
                   activeCategory === category
                     ? "bg-sky-500 text-white shadow-md"
                     : "text-gray-600 hover:text-gray-800 hover:bg-gray-200"
