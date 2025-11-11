@@ -203,12 +203,12 @@ const ProjectsShowcase = () => {
 
         {/* Category Filter */}
         <motion.div
-          className="mb-12 overflow-x-auto flex justify-center"
+          className="mb-12 overflow-x-auto md:flex md:justify-center"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
-          <div className="flex gap-3 pb-2 min-w-max md:min-w-0 bg-gray-100 rounded-full p-2 w-fit">
+          <div className="flex gap-2 md:gap-3 pb-2 bg-gray-100 rounded-full p-1 md:p-2 w-fit min-w-max md:min-w-0">
             {categories.map((category) => (
               <motion.button
                 key={category}
@@ -216,7 +216,7 @@ const ProjectsShowcase = () => {
                 variants={categoryVariants}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`px-6 py-2 text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                className={`px-4 md:px-6 py-2 md:py-2 text-sm md:text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap cursor-pointer ${
                   activeCategory === category
                     ? "bg-sky-500 text-white shadow-md"
                     : "text-gray-600 hover:text-gray-800 hover:bg-gray-200"
