@@ -203,7 +203,7 @@ const ProjectsShowcase = () => {
 
         {/* Category Filter */}
         <motion.div
-          className="mb-12 overflow-x-auto"
+          className="mb-12 overflow-x-auto flex justify-center"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
@@ -230,14 +230,16 @@ const ProjectsShowcase = () => {
 
         {/* Projects Grid */}
         {filteredProjects.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20">
-            <div className="text-gray-400 text-6xl mb-4">📁</div>
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">
-              No Projects Found
-            </h3>
-            <p className="text-gray-500">
-              Sorry, no projects match the selected category.
-            </p>
+          <div className="flex items-center justify-center min-h-[50vh] w-full">
+            <div className="text-center">
+              <div className="text-gray-400 text-6xl mb-4">📁</div>
+              <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                No Projects Found
+              </h3>
+              <p className="text-gray-500">
+                Sorry, no projects match the selected category.
+              </p>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
