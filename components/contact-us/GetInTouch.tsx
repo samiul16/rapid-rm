@@ -109,8 +109,8 @@ export default function ContactFormSection() {
       icon: MapPin,
       title: "Location",
       content:
-        "Abdul wahed Al Malqa, Batha Quraish Dist, Makkah, Kingdom of Saudi Arabia, P.O. Box: 24353",
-      link: "https://maps.google.com/?q=Abdul+wahed+Al+Malqa+Makkah+Saudi+Arabia",
+        "Room No:801,Level -7, 30/A, Nayapaltan (V.I.P Road), Dhaka, Bangladesh",
+      link: "https://www.google.com/maps?q=23.7343837,90.403737&z=15",
     },
   ];
 

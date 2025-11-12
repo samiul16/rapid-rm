@@ -34,7 +34,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
         <div className="absolute inset-0 z-10 bg-gradient-to-l from-sky-600/10 to-sky-600/80" />
 
         {/* Content */}
-        <div className="absolute inset-0 z-20 p-6 flex flex-col justify-center">
+        <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl mt-14 font-medium text-[#E9F5FB]">
               {testimonial.title}
@@ -52,7 +52,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
             {testimonial.testimonial}
           </p>
 
-          <div className="flex items-center mt-auto">
+          <div className="flex items-center">
             <div className="w-5 h-[1px] bg-white"></div>
             <span className="ml-2 text-white opacity-90 text-sm">
               {testimonial.name}
@@ -89,50 +89,50 @@ const ClientTestimonials = () => {
   const testimonialsData: TestimonialData[] = [
     {
       id: 1,
-      name: "Stephanie Hutchkiss",
+      name: "Younus Ahmed",
       title:
         "RM Orient has been a reliable partner for our manpower needs. Their quick response, professionalism, and quality of workers have truly impressed us.",
-      image: "/client/1.jpg",
+      image: "/clientt/1.jpeg",
       testimonial: "",
     },
     {
       id: 2,
-      name: "Michael Johnson",
+      name: "Adib Mahmud",
       title:
         "We appreciate their dedication and attention to detail. Every project is handled with care, and deadlines are always met without compromise.",
-      image: "/client/2.jpg",
+      image: "/clientt/2.jpeg",
       testimonial: "",
     },
     {
       id: 3,
-      name: "Sarah Williams",
+      name: "Abdur Gaffar",
       title:
         "The team at RM Orient consistently provides skilled manpower and excellent support throughout the process. Truly a trusted partner.",
-      image: "/client/3.jpg",
+      image: "/clientt/3.jpeg",
       testimonial: "",
     },
     {
       id: 4,
-      name: "David Brown",
+      name: "Muhammad Salim",
       title:
         "Their recruitment process is smooth, transparent, and efficient. We received exactly the kind of professionals we needed — highly recommended.",
-      image: "/client/1.jpg",
+      image: "/clientt/5.jpeg",
       testimonial: "",
     },
     {
       id: 5,
-      name: "Emma Davis",
+      name: "Yousuf Noor",
       title:
-        "Excellent service and strong customer support. They understand our business requirements perfectly and deliver manpower that fits every role.",
-      image: "/client/2.jpg",
+        "Excellent service and strong customer support. They understand our business perfectly and deliver manpower that fits every role.",
+      image: "/clientt/4.jpeg",
       testimonial: "",
     },
     {
       id: 6,
-      name: "James Wilson",
+      name: "Milon Islam",
       title:
         "Working with RM Orient has been a great experience. Their commitment to quality and reliability makes them stand out in the industry.",
-      image: "/client/3.jpg",
+      image: "/clientt/3.jpeg",
       testimonial: "",
     },
   ];

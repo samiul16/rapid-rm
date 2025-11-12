@@ -28,12 +28,12 @@ export default function Footer() {
         style={{ backgroundImage: "url('/footer/footer-bg.png')" }}
       /> */}
 
-      <div className="relative max-w-8xl mx-auto px-1 sm:px-2 lg:px-20 py-8">
+      <div className="relative max-w-8xl mx-auto px-1 sm:px-2 lg:px-18 py-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 items-center">
           {/* Company Info Section */}
-          <div className="lg:col-span-1 flex flex-col space-y-4 h-full">
-            <div className="flex items-center mb-16 sm:pl-8">
+          <div className="lg:col-span-1 flex flex-col space-y-4 h-full px-2">
+            <div className="flex items-center mb-16 sm:pl-4">
               <Image
                 src="/rm-logo.png"
                 alt="Company Logo"
