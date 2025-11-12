@@ -91,7 +91,7 @@ const DownloadOurApp = () => {
                   Download our app
                 </h2>
                 <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-md">
-                  Explore our wide range of car rental service even in your
+                  Explore our wide range of man power services even in your
                   smartphone easily
                 </p>
               </div>
