@@ -171,10 +171,10 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col h-full px-4">
         {/* Dynamic Content - Heading and Paragraph */}
         <div
-          className={`max-w-[941px] mx-auto flex flex-col items-center space-y-5 transition-all duration-700 ${
+          className={`max-w-7xl mx-auto flex flex-col items-center space-y-5 transition-all duration-700 ${
             slides[currentSlide]?.position === "bottom"
               ? "mt-auto mb-20 md:mb-24 lg:mb-[15%]"
-              : "pt-16 md:pt-20 lg:pt-54"
+              : "pt-54 md:pt-20 lg:pt-54"
           } ${
             isTransitioning
               ? "opacity-80 translate-y-4"
