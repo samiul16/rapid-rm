@@ -7,35 +7,29 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "How Long Does a Construction Project Take?",
+      question: "How long does it usually take to get a visa?",
       answer:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+        "4 to 12 weeks, depending on the visa type and destination country's embassy processing speed.",
     },
     {
-      question: "What sets RM Construction apart in design?",
+      question: "What types of visas does your company process?",
       answer:
-        "We provide end-to-end IT solutions including software development, maintenance services, manpower supply, and technology consulting to help businesses optimize their operations and achieve their goals.",
+        "We handle all types, including Tourist, Business, Student, Work, and Family Reunion visas.",
     },
     {
-      question: "What is the typical budget for a construction project?",
+      question: "What happens if the visa is rejected?",
       answer:
-        "Manpower supply is the service of providing skilled IT professionals and technical resources to organizations on a temporary or permanent basis to meet their staffing requirements and project needs.",
+        "Our service charge is non-refundable. We will analyze the refusal and assist you with re-application or appeal advice.",
     },
     {
-      question: "Does RM prioritize sustainability?",
+      question: "What are the required documents?",
       answer:
-        "Outsourcing allows companies to access specialized expertise, reduce operational costs, focus on core business activities, scale resources flexibly, and accelerate project delivery timelines.",
+        "Documents vary, but generally include Passport, photos, application form, financial proof, and proof of purpose (job/education). We provide a specific checklist.",
     },
     {
-      question: "What construction software do you prefer?",
+      question: "What is your service charge, and what does it include?",
       answer:
-        "Temping (temporary staffing) is the practice of hiring skilled professionals for short-term assignments or project-based work, providing flexibility for both employers and workers.",
-    },
-    {
-      question:
-        "How does RM Construction ensure quality control throughout the construction process?",
-      answer:
-        "Temping (temporary staffing) is the practice of hiring skilled professionals for short-term assignments or project-based work, providing flexibility for both employers and workers.",
+        "Our charge covers consultation, document review, form filling, and appointment booking. Visa fees/Embassy charges are separate and paid by the client.",
     },
   ];
 
