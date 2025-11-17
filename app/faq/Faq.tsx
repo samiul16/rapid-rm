@@ -12,11 +12,7 @@ export default function FAQSection() {
         "4 to 12 weeks, depending on the visa type and destination country's embassy processing speed.",
     },
     {
-<<<<<<< HEAD
-      question: "What sets RM Orient Construction apart in design?",
-=======
       question: "What types of visas does your company process?",
->>>>>>> f754583b05efeccbb349cbec239701f492693add
       answer:
         "We handle all types, including Tourist, Business, Student, Work, and Family Reunion visas.",
     },
@@ -26,28 +22,14 @@ export default function FAQSection() {
         "Our service charge is non-refundable. We will analyze the refusal and assist you with re-application or appeal advice.",
     },
     {
-<<<<<<< HEAD
-      question: "Does RM Orient prioritize sustainability?",
-=======
       question: "What are the required documents?",
->>>>>>> f754583b05efeccbb349cbec239701f492693add
       answer:
         "Documents vary, but generally include Passport, photos, application form, financial proof, and proof of purpose (job/education). We provide a specific checklist.",
     },
     {
       question: "What is your service charge, and what does it include?",
       answer:
-<<<<<<< HEAD
-        "Temping (temporary staffing) is the practice of hiring skilled professionals for short-term assignments or project-based work, providing flexibility for both employers and workers.",
-    },
-    {
-      question:
-        "How does RM Orient Construction ensure quality control throughout the construction process?",
-      answer:
-        "Temping (temporary staffing) is the practice of hiring skilled professionals for short-term assignments or project-based work, providing flexibility for both employers and workers.",
-=======
         "Our charge covers consultation, document review, form filling, and appointment booking. Visa fees/Embassy charges are separate and paid by the client.",
->>>>>>> f754583b05efeccbb349cbec239701f492693add
     },
   ];
 
