@@ -71,7 +71,7 @@ const OurServices = () => {
     {
       title: "Manufacturing",
       description:
-        "RM provides trained factory workers, machine operators, welders, and assembly line specialists who maintain productivity and quality across your manufacturing processes. We ensure each candidate is evaluated for skill and discipline.",
+        "RM Orient provides trained factory workers, machine operators, welders, and assembly line specialists who maintain productivity and quality across your manufacturing processes. We ensure each candidate is evaluated for skill and discipline.",
       icon: Factory,
       gradient: "from-cyan-500 to-blue-600",
     },

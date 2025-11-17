@@ -24,7 +24,7 @@ export default function ManpowerSection() {
           <div className="relative h-[500px] sm:h-[600px]">
             {/* Large Image - Background */}
             <div
-              className="absolute top-0 left-0 w-full sm:w-4/5 h-[400px] sm:h-[500px]"
+              className="absolute top-0 left-0 w-full sm:w-4/5 h-[400px] sm:h-[480px]"
               data-aos="fade-right"
               data-aos-duration="1000"
               data-aos-delay="100"
@@ -42,7 +42,7 @@ export default function ManpowerSection() {
 
             {/* Small Video Thumbnail - Overlapping Bottom Right */}
             <div
-              className="absolute top-40 right-0 w-3/5 sm:w-1/2 h-[280px] sm:h-[320px]"
+              className="absolute top-40 right-0 w-3/5 sm:w-1/2 h-[280px] sm:h-[300px]"
               data-aos="fade-left"
               data-aos-duration="1000"
               data-aos-delay="300"
@@ -70,7 +70,7 @@ export default function ManpowerSection() {
           <div className="space-y-6">
             <div data-aos="fade-up" data-aos-delay="200">
               <h3 className="text-sky-500 text-3xl font-semibold font-anek uppercase tracking-wide mb-3">
-                Trusted Manpower Suppliers
+                TRUSTED VISA CONSULTANTS
               </h3>
             </div>
 
@@ -80,24 +80,42 @@ export default function ManpowerSection() {
               data-aos-delay="300"
             >
               <p className="transition-all duration-300 hover:text-slate-900 text-base">
-                RM Orient, established in 2005, is a trusted name in contracting
-                and manpower solutions across multiple industries. From
-                blue-collar to white-collar professionals, we provide skilled
-                and reliable workforce tailored to your business needs.
+                RM Orient is a trusted and dependable name in visa and
+                immigration support. We offer complete guidance for Tourist,
+                Student, Work, and Migration visas with full documentation
+                assistance. Our experienced team focuses on accuracy,
+                transparency, and timely processing for every client, ensuring a
+                smooth journey from start to finish. With constantly updated
+                immigration knowledge and dedicated case handling, we make your
+                global journey easier, safer, and stress-free. At RM Orient, we
+                work with professionalism, integrity, and a strong commitment to
+                your success.
               </p>
 
               <p className="transition-all duration-300 hover:text-slate-900 text-base">
-                Our diverse team, drawn from Sri Lanka, India, Pakistan, Ghana,
-                and Nigeria, brings global expertise and dedication to every
-                project. For over 17 years, we have been committed to delivering
-                excellence, meeting deadlines, and ensuring unmatched quality in
-                every service we provide.
+                RM Orient stands as a reliable partner for all types of visa and
+                immigration needs. From Tourist to Student, Work, and Migration
+                visas, we provide step-by-step support with complete
+                documentation guidance. Our expert team ensures every
+                application is handled with precision, honesty, and on-time
+                processing. By staying updated with immigration rules and
+                offering personalized case attention, we help clients move
+                forward confidently toward their international dreams.
+                Professionalism, integrity, and client success have always been
+                at the heart of RM Orient.
               </p>
 
               <p className="transition-all duration-300 hover:text-slate-900 text-base">
-                At RM Orient, our reputation speaks for itself — built on
-                integrity, professionalism, and an unwavering commitment to help
-                our clients succeed.
+                RM Orient has earned the reputation of being a trusted name in
+                visa and immigration services. We assist clients with Tourist,
+                Student, Work, and Migration visas, offering full documentation
+                support and clear guidance throughout the process. Our skilled
+                and knowledgeable team guarantees accuracy, transparency, and
+                timely completion for every case we handle. With up-to-date
+                immigration insights and a dedicated approach, we ensure a
+                seamless and stress-free experience for all our clients. At RM
+                Orient, we believe that professionalism and integrity lead the
+                way — and your success is our greatest priority.
               </p>
             </div>
 

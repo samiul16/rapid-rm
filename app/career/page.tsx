@@ -59,11 +59,11 @@ const CareerPage = () => {
   ];
 
   const whyJoinReasons = [
-    "Passion for Hospitality",
-    "Respect & Teamwork",
-    "Excellence in Service",
-    "Continuous Learning",
-    "Diversity & Inclusion",
+    "Strong Global Client Network",
+    "Secure & Reliable Overseas Opportunities",
+    "Transparent Recruitment Process",
+    "Professional Training & Skill Development",
+    "Ethical Management & Worker Safety Assurance",
   ];
 
   const handleApplyClick = (jobId: number) => {
@@ -143,7 +143,7 @@ const CareerPage = () => {
                   className="text-3xl sm:text-4xl font-bold text-sky-500 leading-10"
                   variants={itemVariants}
                 >
-                  Why Join With RM
+                  Why Join With RM Orient
                 </motion.h2>
 
                 <div className="flex flex-col gap-6">
@@ -161,7 +161,7 @@ const CareerPage = () => {
                       >
                         <Check className="w-4 h-4 text-white" />
                       </motion.div>
-                      <h3 className="text-xl sm:text-2xl font-medium text-sky-500 leading-normal">
+                      <h3 className="text-xl sm:text-xl font-medium text-sky-500 leading-normal">
                         {reason}
                       </h3>
                     </motion.div>

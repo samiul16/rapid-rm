@@ -12,7 +12,7 @@ export default function FAQSection() {
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
     },
     {
-      question: "What sets RM Construction apart in design?",
+      question: "What sets RM Orient Construction apart in design?",
       answer:
         "We provide end-to-end IT solutions including software development, maintenance services, manpower supply, and technology consulting to help businesses optimize their operations and achieve their goals.",
     },
@@ -22,7 +22,7 @@ export default function FAQSection() {
         "Manpower supply is the service of providing skilled IT professionals and technical resources to organizations on a temporary or permanent basis to meet their staffing requirements and project needs.",
     },
     {
-      question: "Does RM prioritize sustainability?",
+      question: "Does RM Orient prioritize sustainability?",
       answer:
         "Outsourcing allows companies to access specialized expertise, reduce operational costs, focus on core business activities, scale resources flexibly, and accelerate project delivery timelines.",
     },
@@ -33,7 +33,7 @@ export default function FAQSection() {
     },
     {
       question:
-        "How does RM Construction ensure quality control throughout the construction process?",
+        "How does RM Orient Construction ensure quality control throughout the construction process?",
       answer:
         "Temping (temporary staffing) is the practice of hiring skilled professionals for short-term assignments or project-based work, providing flexibility for both employers and workers.",
     },

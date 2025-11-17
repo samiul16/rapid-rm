@@ -1,21 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { Facebook, Twitter, Linkedin, Share2 } from "lucide-react";
 import Header from "./Header";
 
 const BlogPage = () => {
-  const blogPosts = [
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
+
+  const allBlogPosts = [
     {
       id: 1,
       date: "September 17th, 2025",
       author: "rmuser",
-      title:
-        "Labour Law Compliance in UAE: What Employers Need to Know Before Hiring",
+      title: "How to Choose the Right Visa Consultancy",
       excerpt:
-        "Hiring the right talent in the UAE is more than just filling positions; it involves adhering to strict labour law compliance and staffing regulations. Understanding the UAE labour law ensures that employers operate legally while protecting the rights of employees. Here's what you need to know before hiring. 1. Understanding",
+        "Choosing the right visa consultancy is crucial for a successful application. Working with the wrong agency can waste both time and money. In this blog, we will guide you on how to identify a trustworthy and experienced consultancy. You will also get practical tips to make your visa process smooth and hassle-free.",
       image: "/blogs/blog-1.png",
       slug: "labour-law-compliance-uae",
     },
@@ -23,9 +25,9 @@ const BlogPage = () => {
       id: 2,
       date: "September 10th, 2025",
       author: "rmuser",
-      title: "How to Choose the Right Oil & Gas Manpower Supplier in the UAE",
+      title: "Top 5 Visa Application Mistakes to Avoid",
       excerpt:
-        "Finding the right workforce can make or break your oil and gas project in the UAE. From ensuring safety to meeting tight deadlines, a reliable manpower supplier is key. Here's a step-by-step guide to help you choose the best staffing solutions UAE. 1. Start With a Clear Understanding of Your",
+        "Many people make common mistakes when applying for a visa, such as providing incorrect information, missing documents, or submitting applications late. In this blog, we highlight the top five mistakes applicants make. We will also share tips on how to avoid them and ensure a safe and successful application process.",
       image: "/blogs/blog-2.png",
       slug: "oil-gas-manpower-supplier-uae",
     },
@@ -33,10 +35,9 @@ const BlogPage = () => {
       id: 3,
       date: "September 2nd, 2025",
       author: "rmuser",
-      title:
-        "Why Hiring Skilled Labour in Dubai is Crucial for Your Construction Project",
+      title: "Step-by-Step Work Visa Application Guide",
       excerpt:
-        "Smooth Manpower, a leading provider of manpower supply UAE, understands the critical role of skilled labour Dubai in ensuring successful construction projects. Whether you are developing residential, commercial, or industrial structures, having the right workforce can make all the difference. Here are the top five benefits of hiring skilled labour",
+        "Applying for a work visa abroad can seem complicated for many. However, with a step-by-step plan, the process becomes much easier. In this blog, we explain each stage of the work visa application in detail. Following these steps will help you avoid mistakes and move closer to working in your dream country.",
       image: "/blogs/blog-3.png",
       slug: "skilled-labour-dubai-construction",
     },
@@ -44,10 +45,9 @@ const BlogPage = () => {
       id: 4,
       date: "July 24th, 2025",
       author: "rmuser",
-      title:
-        "Leveraging Manpower Supply Services for Effective Project Management in UAE",
+      title: "Student Visa Tips for Studying Abroad",
       excerpt:
-        "Effective project management is crucial for the success of any business venture, especially in the rapidly evolving and competitive market of the UAE. One key strategy that has proven beneficial for companies across various industries is leveraging manpower supply services. These services provide businesses with a flexible, skilled, and efficient",
+        "A valid visa is essential for studying abroad. Many students get confused about the application process. In this blog, we explain how to apply for a student visa in a simple and organized way. We also provide advice on required documents, deadlines, and preparation tips.",
       image: "/blogs/blog-4.png",
       slug: "manpower-supply-project-management",
     },
@@ -55,10 +55,9 @@ const BlogPage = () => {
       id: 5,
       date: "July 20th, 2025",
       author: "rmuser",
-      title:
-        "Exploring Manpower Supply Trends in UAE: Insights for Businesses Looking to Expand",
+      title: "How to Avoid Visa Rejection",
       excerpt:
-        "The United Arab Emirates (UAE) continues to be a global hub for business and innovation, attracting companies from various industries seeking growth opportunities in the dynamic Middle Eastern market. As businesses embark on expansion journeys, understanding the latest manpower supply trends in the UAE is essential for effective workforce planning",
+        "Visa rejection can be stressful, but proper preparation can prevent it. This blog discusses the main reasons why visa applications get rejected. We also provide strategies to strengthen your application. Following these tips can make your visa process smoother and increase your chances of approval.",
       image: "/blogs/blog-5.png",
       slug: "manpower-supply-trends-uae",
     },
@@ -66,13 +65,86 @@ const BlogPage = () => {
       id: 6,
       date: "July 12th, 2025",
       author: "rmuser",
-      title: "The Importance of Skilled Labour Supply in the UAE",
+      title: "Understanding Different Types of Visas",
       excerpt:
-        "The United Arab Emirates (UAE) is renowned for its rapid economic growth and development, driven by a diverse range of industries including construction, hospitality, healthcare, and technology. Central to the success of these industries is the availability of skilled labour. The supply of skilled labour is crucial for maintaining the",
+        "There are various types of visas, including tourist, student, work, and sponsorship visas. Each type has different rules, durations, and benefits. In this blog, we explain the different visa types in a simple and clear way. This will help readers understand which visa is the best option for them.",
       image: "/blogs/blog-6.png",
       slug: "skilled-labour-supply-importance",
     },
+    // Additional posts for pagination demo
+    {
+      id: 7,
+      date: "July 5th, 2025",
+      author: "rmuser",
+      title: "Business Visa Requirements and Process",
+      excerpt:
+        "Business visas allow entrepreneurs and professionals to explore opportunities abroad. The application process varies by country and purpose. In this blog, we explain the requirements for business visas, including documentation, financial proof, and interview preparation. This guide will help you navigate the business visa process successfully.",
+      image: "/blogs/blog-1.png",
+      slug: "business-visa-requirements",
+    },
+    {
+      id: 8,
+      date: "June 28th, 2025",
+      author: "rmuser",
+      title: "Family Visa Sponsorship Guide",
+      excerpt:
+        "Family reunification is important for many expatriates. Sponsoring family members requires proper documentation and meeting specific criteria. This blog covers the family visa sponsorship process, required documents, and common challenges. We also provide tips to ensure a smooth application process for your loved ones.",
+      image: "/blogs/blog-2.png",
+      slug: "family-visa-sponsorship",
+    },
+    {
+      id: 9,
+      date: "June 20th, 2025",
+      author: "rmuser",
+      title: "Medical Visa Application Process",
+      excerpt:
+        "Medical visas are essential for those seeking treatment abroad. The application process requires medical documentation and proof of treatment plans. In this blog, we explain the medical visa requirements, necessary documents, and application timeline. This guide will help patients and their families navigate the medical visa process.",
+      image: "/blogs/blog-3.png",
+      slug: "medical-visa-application",
+    },
+    {
+      id: 10,
+      date: "June 15th, 2025",
+      author: "rmuser",
+      title: "Transit Visa Requirements",
+      excerpt:
+        "Transit visas are required when passing through certain countries during travel. Many travelers are unaware of transit visa requirements, leading to complications. This blog explains when transit visas are needed, application procedures, and exemptions. Understanding these requirements will help you plan your journey without delays.",
+      image: "/blogs/blog-4.png",
+      slug: "transit-visa-requirements",
+    },
+    {
+      id: 11,
+      date: "June 8th, 2025",
+      author: "rmuser",
+      title: "Visa Interview Preparation Tips",
+      excerpt:
+        "Visa interviews can be nerve-wracking, but proper preparation increases success rates. Consular officers evaluate applicants based on various factors. This blog provides comprehensive interview preparation tips, common questions, and strategies to present yourself confidently. Following these guidelines will improve your chances of visa approval.",
+      image: "/blogs/blog-5.png",
+      slug: "visa-interview-preparation",
+    },
+    {
+      id: 12,
+      date: "June 1st, 2025",
+      author: "rmuser",
+      title: "Document Authentication and Attestation",
+      excerpt:
+        "Document authentication is crucial for visa applications and overseas employment. The attestation process varies by country and document type. This blog explains the authentication process, required steps, and common mistakes to avoid. Proper document preparation ensures smooth visa processing and legal compliance abroad.",
+      image: "/blogs/blog-6.png",
+      slug: "document-authentication",
+    },
   ];
+
+  // Calculate pagination
+  const totalPages = Math.ceil(allBlogPosts.length / postsPerPage);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const currentPosts = allBlogPosts.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of blog section
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   // Animation variants
   const containerVariants: Variants = {
@@ -103,13 +175,13 @@ const BlogPage = () => {
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16">
           {/* Blog Grid */}
           <motion.div
+            key={currentPage}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14"
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            animate="visible"
             variants={containerVariants}
           >
-            {blogPosts.map((post) => (
+            {currentPosts.map((post) => (
               <motion.article
                 key={post.id}
                 className="bg-white rounded-[20px] shadow-[0px_0px_8px_0px_rgba(0,0,0,0.16)] p-4 sm:p-5 flex flex-col gap-2 hover:shadow-[0px_0px_16px_0px_rgba(0,0,0,0.12)] transition-shadow"
@@ -222,35 +294,30 @@ const BlogPage = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            <motion.button
-              className="px-4 py-2 rounded-lg bg-sky-500 text-white font-medium"
-              whileHover={{ scale: 1.05, backgroundColor: "#0284c7" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              1
-            </motion.button>
-            <motion.button
-              className="px-4 py-2 rounded-lg border border-sky-500 text-sky-500 font-medium"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#0ea5e9",
-                color: "#ffffff",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              2
-            </motion.button>
-            <motion.button
-              className="px-4 py-2 rounded-lg border border-sky-500 text-sky-500 font-medium"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#0ea5e9",
-                color: "#ffffff",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              3
-            </motion.button>
+            {Array.from({ length: totalPages }, (_, index) => {
+              const pageNumber = index + 1;
+              const isActive = currentPage === pageNumber;
+
+              return (
+                <motion.button
+                  key={pageNumber}
+                  className={`px-4 py-2 rounded-lg font-medium cursor-pointer ${
+                    isActive
+                      ? "bg-sky-500 text-white"
+                      : "border border-sky-500 text-sky-500"
+                  }`}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: isActive ? "#0284c7" : "#0ea5e9",
+                    color: "#ffffff",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handlePageChange(pageNumber)}
+                >
+                  {pageNumber}
+                </motion.button>
+              );
+            })}
           </motion.div>
         </div>
       </div>

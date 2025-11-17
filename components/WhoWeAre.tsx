@@ -13,19 +13,19 @@ const WhoWeAre = () => {
       id: "mission",
       title: "Our Mission",
       content:
-        "To deliver comprehensive manpower and HR solutions that empower businesses to achieve operational excellence through efficiency, compliance, and trusted partnerships",
+        "To provide ethical, transparent, and reliable recruitment solutions that connect skilled professionals with secure global opportunities.",
     },
     {
       id: "vision",
       title: "Our Vision",
       content:
-        "To be the leading workforce and HR service provider in the region — recognized for reliability, innovation, and excellence in connecting people, processes, and performance.",
+        "To be a trusted global leader in manpower and visa services, known for quality, integrity, and long-term partnerships.",
     },
     {
       id: "values",
       title: "Our Values",
       content:
-        "At RM Orient, our values define who we are and how we serve:\n\nIntegrity: We uphold honesty and transparency in every partnership.\n\nReliability: Always ready to deliver, no matter how urgent or complex the task.\n\nExcellence: We strive for quality and perfection in every service we provide.\n\nCustomer Focus: Your goals are our priority — we grow by helping you grow.\n\nInnovation: We continuously improve to meet the evolving needs of modern business.",
+        "At RM Orient, our values define who we are and how we serve:\n\nIntegrity & Transparency: We uphold honesty and transparency in every partnership.\n\nExcellence in Service: We strive for quality and perfection in every service we provide.\n\nRespect & Commitment: Your goals are our priority — we grow by helping you grow.\n\nTeamwork & Collaboration: We work together to achieve the best outcomes for our clients.\n\nContinuous Improvement: We continuously improve to meet the evolving needs of modern business.",
     },
   ];
 
@@ -81,22 +81,20 @@ const WhoWeAre = () => {
             {/* About RM Section */}
             <motion.div className="flex flex-col gap-6" variants={itemVariants}>
               <h2 className="text-3xl sm:text-4xl font-semibold text-sky-500 leading-10 tracking-widest">
-                About RM
+                About RM Orient
               </h2>
               <p className="text-base text-zinc-600 leading-relaxed text-justify">
-                Founded with a vision to empower businesses through reliable
-                workforce solutions, RM Orient has become a trusted name in
-                manpower and staffing excellence. We specialize in connecting
-                companies with the right talent — from on-demand labor to
-                executive professionals — ensuring every project runs smoothly,
-                efficiently, and successfully. <br />
-                Our team is dedicated to providing end-to-end HR, recruitment,
-                and compliance solutions that help clients save time, reduce
-                risk, and focus on what truly matters — growing their business.{" "}
-                <br />
-                With integrity, precision, and professionalism at the heart of
-                everything we do, RM Orient stands as a symbol of trust,
-                commitment, and quality in workforce management.
+                RM Orient is a trusted global manpower and visa solutions
+                provider, connecting skilled workers with reputable companies
+                across the Middle East, Europe, and Asia. Since our
+                establishment, we have been committed to delivering ethical
+                recruitment, accurate documentation, and reliable overseas
+                employment support. <br />
+                With a strong network, experienced team, and a transparent
+                process, we ensure both clients and candidates receive the
+                highest level of service. At RM Orient, we believe in
+                professionalism, integrity, and long-term success — helping
+                people build better careers and companies build stronger teams.
               </p>
             </motion.div>
 
@@ -154,10 +152,8 @@ const WhoWeAre = () => {
                               </span>
                               <span>
                                 <strong className="text-sky-500">
-                                  Integrity:
+                                  Integrity & Transparency
                                 </strong>{" "}
-                                We uphold honesty and transparency in every
-                                partnership.
                               </span>
                             </li>
                             <li className="flex items-start gap-3">
@@ -166,10 +162,8 @@ const WhoWeAre = () => {
                               </span>
                               <span>
                                 <strong className="text-sky-500">
-                                  Reliability:
+                                  Excellence in Service
                                 </strong>{" "}
-                                Always ready to deliver, no matter how urgent or
-                                complex the task.
                               </span>
                             </li>
                             <li className="flex items-start gap-3">
@@ -178,10 +172,8 @@ const WhoWeAre = () => {
                               </span>
                               <span>
                                 <strong className="text-sky-500">
-                                  Excellence:
+                                  Respect & Commitment
                                 </strong>{" "}
-                                We strive for quality and perfection in every
-                                service we provide.
                               </span>
                             </li>
                             <li className="flex items-start gap-3">
@@ -190,10 +182,8 @@ const WhoWeAre = () => {
                               </span>
                               <span>
                                 <strong className="text-sky-500">
-                                  Customer Focus:
+                                  Teamwork & Collaboration
                                 </strong>{" "}
-                                Your goals are our priority — we grow by helping
-                                you grow.
                               </span>
                             </li>
                             <li className="flex items-start gap-3">
@@ -202,10 +192,8 @@ const WhoWeAre = () => {
                               </span>
                               <span>
                                 <strong className="text-sky-500">
-                                  Innovation:
+                                  Continuous Improvement
                                 </strong>{" "}
-                                We continuously improve to meet the evolving
-                                needs of modern business.
                               </span>
                             </li>
                           </ul>
