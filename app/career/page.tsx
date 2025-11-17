@@ -183,7 +183,7 @@ const CareerPage = () => {
                     whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                   >
                     <Image
-                      src="/careere/1.png"
+                      src="/career-new/1.png"
                       alt="Team member"
                       fill
                       className="object-cover"
@@ -196,7 +196,7 @@ const CareerPage = () => {
                     whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                   >
                     <Image
-                      src="/careere/2.png"
+                      src="/career-new/2.png"
                       alt="Team collaboration"
                       fill
                       className="object-cover"
