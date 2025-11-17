@@ -44,9 +44,9 @@ export default function Footer() {
             </div>
 
             <p className="text-white text-lg leading-relaxed -mt-10">
-              RM Orient Company Ltd. is a Saudi Arabia based Manpower Supply
-              Company established in the year 2014 to provide quality personnel
-              to all fields of expertise and read more..
+              RM Orient Company Ltd. is a Visa Processing Company established in
+              the year 2014 to provide quality personnel to all fields of
+              expertise and read more..
             </p>
 
             {/* Social Media Icons */}
