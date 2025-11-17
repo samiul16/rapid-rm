@@ -75,7 +75,7 @@ const ClientTestimonials = () => {
       image: "/clients/client5.jpg",
       rating: 5,
       testimonial:
-        "RM's project staffing solutions have been invaluable to our business. They provide skilled workers who are well-trained and ready to work from day one.",
+        "RM's Orient project staffing solutions have been invaluable to our business. They provide skilled workers who are well-trained and ready to work from day one.",
     },
   ];
 

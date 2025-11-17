@@ -75,7 +75,7 @@ const HeroSection = () => {
     const autoSlideInterval = setInterval(() => {
       setIsTransitioning(true);
       setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-    }, 3500); // 3.5 seconds for smooth continuous loop
+    }, 6000); // 3.5 seconds for smooth continuous loop
 
     return () => clearInterval(autoSlideInterval);
   }, [isTransitioning, totalSlides]);

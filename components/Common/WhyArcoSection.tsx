@@ -8,18 +8,15 @@ const WhyArcoSection = () => {
         <div className="w-full">
           <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-center text-sky-500 mb-8 font-['Anek_Malayalam']">
-              Why RM?
+              Why RM Orient?
             </h2>
             <div className="w-full mx-auto">
               <p className="text-base md:text-lg text-cyan-900 leading-relaxed font-['Anek_Malayalam'] text-center">
-                Because we make manpower simple, strategic, and stress-free.
-                From urgent on-site labor to top-level executives, RM Orient
-                provides tailored staffing, HR, and compliance solutions that
-                align perfectly with your business needs. Our expertise in PRO,
-                PEO, and EoR services ensures that you stay legally compliant
-                while we handle the complexities of workforce management. <br />{" "}
-                At RM Orient, we don’t just fill positions — we build
-                partnerships that drive success.
+                We provide fast, transparent, and reliable overseas recruitment
+                with complete visa and documentation support. Our experienced
+                team ensures hassle-free processing, trusted talent sourcing,
+                and fully compliant services — building partnerships that
+                deliver results.
               </p>
             </div>
           </div>

@@ -313,7 +313,7 @@ export default function Footer() {
 
             {/* Copyright Text */}
             <p className="text-center text-white text-xl">
-              © All rights reserved by RM | Developed by{" "}
+              © All rights reserved by RM Orient | Developed by{" "}
               <span className="font-semibold">
                 <Link href="https://rapidsmarterp.com/">RAPID</Link>
               </span>

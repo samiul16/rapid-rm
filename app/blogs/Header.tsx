@@ -15,7 +15,7 @@ const Header = () => {
           className="w-full h-full"
         >
           <Image
-            src="/blogs/Blog.png"
+            src="/blogs-page/blog-hero.jpg"
             alt="About Us Background"
             fill
             className="object-cover"

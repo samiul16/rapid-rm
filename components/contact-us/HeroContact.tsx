@@ -7,7 +7,7 @@ const Header = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/contact-us-2.jpg"
+          src="/all-hero/Contact.jpg"
           alt="About Us Background"
           fill
           className="object-cover"

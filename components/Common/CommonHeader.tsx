@@ -7,7 +7,7 @@ const AboutUsSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/about/about us.png"
+          src="/about-img/about-hero.jpeg"
           alt="About Us Background"
           fill
           className="object-cover"
