@@ -254,7 +254,7 @@ const WhoWeAre = () => {
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
             >
               <Image
-                src="/about/about-arco-1.jpg"
+                src="/about-img/1.png"
                 alt="Restaurant interior"
                 fill
                 className="object-cover"
@@ -269,7 +269,7 @@ const WhoWeAre = () => {
                 whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               >
                 <Image
-                  src="/about/about-arco-2.jpg"
+                  src="/about-img/2.png"
                   alt="Food presentation"
                   fill
                   className="object-cover"
@@ -281,7 +281,7 @@ const WhoWeAre = () => {
                 whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               >
                 <Image
-                  src="/about/about-arco-3.jpg"
+                  src="/about-img/3.png"
                   alt="Dining experience"
                   fill
                   className="object-cover"

@@ -92,7 +92,7 @@ const GetInTouch = () => {
             <div className="relative w-full max-w-xl h-full flex items-center">
               <div className="rounded-2xl p-2 shadow-2xl w-full">
                 <Image
-                  src="/get.png"
+                  src="/touch.png"
                   alt="Professional team working together"
                   width={500}
                   height={400}

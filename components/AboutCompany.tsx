@@ -30,7 +30,7 @@ export default function ManpowerSection() {
               data-aos-delay="100"
             >
               <Image
-                src="/about/1.jpg"
+                src="/homee/1.png"
                 height={500}
                 width={600}
                 alt="Workers in safety gear"
@@ -49,7 +49,7 @@ export default function ManpowerSection() {
             >
               <div className="relative w-full h-auto group">
                 <Image
-                  src="/about/2.jpg"
+                  src="/homee/2.png"
                   height={320}
                   width={400}
                   alt="Workers in safety gear"

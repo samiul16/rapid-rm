@@ -18,7 +18,7 @@ const BlogPage = () => {
       title: "How to Choose the Right Visa Consultancy",
       excerpt:
         "Choosing the right visa consultancy is crucial for a successful application. Working with the wrong agency can waste both time and money. In this blog, we will guide you on how to identify a trustworthy and experienced consultancy. You will also get practical tips to make your visa process smooth and hassle-free.",
-      image: "/blogs/blog-1.png",
+      image: "/blogs-page/1.png",
       slug: "labour-law-compliance-uae",
     },
     {
@@ -28,7 +28,7 @@ const BlogPage = () => {
       title: "Top 5 Visa Application Mistakes to Avoid",
       excerpt:
         "Many people make common mistakes when applying for a visa, such as providing incorrect information, missing documents, or submitting applications late. In this blog, we highlight the top five mistakes applicants make. We will also share tips on how to avoid them and ensure a safe and successful application process.",
-      image: "/blogs/blog-2.png",
+      image: "/blogs-page/2.png",
       slug: "oil-gas-manpower-supplier-uae",
     },
     {
@@ -38,7 +38,7 @@ const BlogPage = () => {
       title: "Step-by-Step Work Visa Application Guide",
       excerpt:
         "Applying for a work visa abroad can seem complicated for many. However, with a step-by-step plan, the process becomes much easier. In this blog, we explain each stage of the work visa application in detail. Following these steps will help you avoid mistakes and move closer to working in your dream country.",
-      image: "/blogs/blog-3.png",
+      image: "/blogs-page/3.png",
       slug: "skilled-labour-dubai-construction",
     },
     {
@@ -48,7 +48,7 @@ const BlogPage = () => {
       title: "Student Visa Tips for Studying Abroad",
       excerpt:
         "A valid visa is essential for studying abroad. Many students get confused about the application process. In this blog, we explain how to apply for a student visa in a simple and organized way. We also provide advice on required documents, deadlines, and preparation tips.",
-      image: "/blogs/blog-4.png",
+      image: "/blogs-page/4.png",
       slug: "manpower-supply-project-management",
     },
     {
@@ -58,7 +58,7 @@ const BlogPage = () => {
       title: "How to Avoid Visa Rejection",
       excerpt:
         "Visa rejection can be stressful, but proper preparation can prevent it. This blog discusses the main reasons why visa applications get rejected. We also provide strategies to strengthen your application. Following these tips can make your visa process smoother and increase your chances of approval.",
-      image: "/blogs/blog-5.png",
+      image: "/blogs-page/5.png",
       slug: "manpower-supply-trends-uae",
     },
     {
@@ -68,70 +68,70 @@ const BlogPage = () => {
       title: "Understanding Different Types of Visas",
       excerpt:
         "There are various types of visas, including tourist, student, work, and sponsorship visas. Each type has different rules, durations, and benefits. In this blog, we explain the different visa types in a simple and clear way. This will help readers understand which visa is the best option for them.",
-      image: "/blogs/blog-6.png",
+      image: "/blogs-page/6.png",
       slug: "skilled-labour-supply-importance",
     },
     // Additional posts for pagination demo
-    {
-      id: 7,
-      date: "July 5th, 2025",
-      author: "rmuser",
-      title: "Business Visa Requirements and Process",
-      excerpt:
-        "Business visas allow entrepreneurs and professionals to explore opportunities abroad. The application process varies by country and purpose. In this blog, we explain the requirements for business visas, including documentation, financial proof, and interview preparation. This guide will help you navigate the business visa process successfully.",
-      image: "/blogs/blog-1.png",
-      slug: "business-visa-requirements",
-    },
-    {
-      id: 8,
-      date: "June 28th, 2025",
-      author: "rmuser",
-      title: "Family Visa Sponsorship Guide",
-      excerpt:
-        "Family reunification is important for many expatriates. Sponsoring family members requires proper documentation and meeting specific criteria. This blog covers the family visa sponsorship process, required documents, and common challenges. We also provide tips to ensure a smooth application process for your loved ones.",
-      image: "/blogs/blog-2.png",
-      slug: "family-visa-sponsorship",
-    },
-    {
-      id: 9,
-      date: "June 20th, 2025",
-      author: "rmuser",
-      title: "Medical Visa Application Process",
-      excerpt:
-        "Medical visas are essential for those seeking treatment abroad. The application process requires medical documentation and proof of treatment plans. In this blog, we explain the medical visa requirements, necessary documents, and application timeline. This guide will help patients and their families navigate the medical visa process.",
-      image: "/blogs/blog-3.png",
-      slug: "medical-visa-application",
-    },
-    {
-      id: 10,
-      date: "June 15th, 2025",
-      author: "rmuser",
-      title: "Transit Visa Requirements",
-      excerpt:
-        "Transit visas are required when passing through certain countries during travel. Many travelers are unaware of transit visa requirements, leading to complications. This blog explains when transit visas are needed, application procedures, and exemptions. Understanding these requirements will help you plan your journey without delays.",
-      image: "/blogs/blog-4.png",
-      slug: "transit-visa-requirements",
-    },
-    {
-      id: 11,
-      date: "June 8th, 2025",
-      author: "rmuser",
-      title: "Visa Interview Preparation Tips",
-      excerpt:
-        "Visa interviews can be nerve-wracking, but proper preparation increases success rates. Consular officers evaluate applicants based on various factors. This blog provides comprehensive interview preparation tips, common questions, and strategies to present yourself confidently. Following these guidelines will improve your chances of visa approval.",
-      image: "/blogs/blog-5.png",
-      slug: "visa-interview-preparation",
-    },
-    {
-      id: 12,
-      date: "June 1st, 2025",
-      author: "rmuser",
-      title: "Document Authentication and Attestation",
-      excerpt:
-        "Document authentication is crucial for visa applications and overseas employment. The attestation process varies by country and document type. This blog explains the authentication process, required steps, and common mistakes to avoid. Proper document preparation ensures smooth visa processing and legal compliance abroad.",
-      image: "/blogs/blog-6.png",
-      slug: "document-authentication",
-    },
+    // {
+    //   id: 7,
+    //   date: "July 5th, 2025",
+    //   author: "rmuser",
+    //   title: "Business Visa Requirements and Process",
+    //   excerpt:
+    //     "Business visas allow entrepreneurs and professionals to explore opportunities abroad. The application process varies by country and purpose. In this blog, we explain the requirements for business visas, including documentation, financial proof, and interview preparation. This guide will help you navigate the business visa process successfully.",
+    //   image: "/blogs/blog-1.png",
+    //   slug: "business-visa-requirements",
+    // },
+    // {
+    //   id: 8,
+    //   date: "June 28th, 2025",
+    //   author: "rmuser",
+    //   title: "Family Visa Sponsorship Guide",
+    //   excerpt:
+    //     "Family reunification is important for many expatriates. Sponsoring family members requires proper documentation and meeting specific criteria. This blog covers the family visa sponsorship process, required documents, and common challenges. We also provide tips to ensure a smooth application process for your loved ones.",
+    //   image: "/blogs/blog-2.png",
+    //   slug: "family-visa-sponsorship",
+    // },
+    // {
+    //   id: 9,
+    //   date: "June 20th, 2025",
+    //   author: "rmuser",
+    //   title: "Medical Visa Application Process",
+    //   excerpt:
+    //     "Medical visas are essential for those seeking treatment abroad. The application process requires medical documentation and proof of treatment plans. In this blog, we explain the medical visa requirements, necessary documents, and application timeline. This guide will help patients and their families navigate the medical visa process.",
+    //   image: "/blogs/blog-3.png",
+    //   slug: "medical-visa-application",
+    // },
+    // {
+    //   id: 10,
+    //   date: "June 15th, 2025",
+    //   author: "rmuser",
+    //   title: "Transit Visa Requirements",
+    //   excerpt:
+    //     "Transit visas are required when passing through certain countries during travel. Many travelers are unaware of transit visa requirements, leading to complications. This blog explains when transit visas are needed, application procedures, and exemptions. Understanding these requirements will help you plan your journey without delays.",
+    //   image: "/blogs/blog-4.png",
+    //   slug: "transit-visa-requirements",
+    // },
+    // {
+    //   id: 11,
+    //   date: "June 8th, 2025",
+    //   author: "rmuser",
+    //   title: "Visa Interview Preparation Tips",
+    //   excerpt:
+    //     "Visa interviews can be nerve-wracking, but proper preparation increases success rates. Consular officers evaluate applicants based on various factors. This blog provides comprehensive interview preparation tips, common questions, and strategies to present yourself confidently. Following these guidelines will improve your chances of visa approval.",
+    //   image: "/blogs/blog-5.png",
+    //   slug: "visa-interview-preparation",
+    // },
+    // {
+    //   id: 12,
+    //   date: "June 1st, 2025",
+    //   author: "rmuser",
+    //   title: "Document Authentication and Attestation",
+    //   excerpt:
+    //     "Document authentication is crucial for visa applications and overseas employment. The attestation process varies by country and document type. This blog explains the authentication process, required steps, and common mistakes to avoid. Proper document preparation ensures smooth visa processing and legal compliance abroad.",
+    //   image: "/blogs/blog-6.png",
+    //   slug: "document-authentication",
+    // },
   ];
 
   // Calculate pagination
@@ -287,7 +287,7 @@ const BlogPage = () => {
           </motion.div>
 
           {/* Pagination */}
-          <motion.div
+          {/* <motion.div
             className="flex justify-center items-center gap-2 mt-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -318,7 +318,7 @@ const BlogPage = () => {
                 </motion.button>
               );
             })}
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </>
