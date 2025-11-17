@@ -44,7 +44,7 @@ const ValuableClients = () => {
             Our Valuable Clients
           </h2>
           <p className="text-gray-600 text-lg font-normal font-anek">
-            Unveil the Finest Selection of High-end Vehicles
+            The partners of our success, whose dreams have become a reality.
           </p>
         </div>
 

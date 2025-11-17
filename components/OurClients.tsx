@@ -61,7 +61,7 @@ const ClientSection = () => {
             viewport={{ once: true }}
             variants={subtitleVariants}
           >
-            Unveil the Finest Selection of High-end Vehicles
+            The partners of our success, whose dreams have become a reality.
           </motion.p>
         </div>
 
